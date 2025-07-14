@@ -228,6 +228,16 @@
       font-size: 8px;
       line-height: 1.1;
     }
+    .cert-img:hover {
+      transform: scale(1.8);
+      z-index: 10;
+      transition: transform 0.4s ease;
+    }
+
+    .cert-img {
+      transition: transform 0.3s ease;
+    }
+
   </style>
 </head>
 <body>
@@ -273,135 +283,117 @@
 
     <!-- CARRUSEL DE CERTIFICACIONES (3 a la vista) -->
     <!-- Carrusel con drag/swipe en desktop y animación suave -->
-<div class="cert-carousel-outer" id="certs">
-  <div class="carousel-arrow" id="arrow-left">&#9664;</div>
-  <div class="cert-carousel-frame" id="cert-carousel-frame">
-    <div class="cert-cards-inner" id="cert-cards-inner"></div>
+
+
+
+
+<style>
+.icon-cards {
+  position: relative;
+  width: 60vw;
+  height: 40vw;
+  max-width: 380px;
+  max-height: 250px;
+  margin: 0;
+  color: white;
+  perspective: 1000px;
+  transform-origin: center;
+}
+
+.icon-cards__content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: translateZ(-30vw) rotateY(0);
+  animation: carousel 10s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.icon-cards__content.step-animation {
+  animation: carousel 8s infinite steps(1) forwards;
+}
+
+.icon-cards__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60vw;
+  height: 40vw;
+  max-width: 380px;
+  max-height: 250px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.1);
+  border-radius: 6px;
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}
+
+.icon-cards__item:nth-child(1) {
+  background: #FDD94F;
+  transform: rotateY(0deg) translateZ(35vw);
+}
+
+.icon-cards__item:nth-child(2) {
+  background: #F87949;
+  transform: rotateY(120deg) translateZ(35vw);
+}
+
+.icon-cards__item:nth-child(3) {
+  background: #FBAB48;
+  transform: rotateY(240deg) translateZ(35vw);
+}
+
+@keyframes carousel {
+  0%, 17.5% { transform: translateZ(-35vw) rotateY(0); }
+  27.5%, 45% { transform: translateZ(-35vw) rotateY(-120deg); }
+  55%, 72.5% { transform: translateZ(-35vw) rotateY(-240deg); }
+  82.5%, 100% { transform: translateZ(-35vw) rotateY(-360deg); }
+}
+
+
+</style>
+
+<section id="carrucel">
+  <h2 style="text-align:center;">Certificaciones destacadas</h2>
+  <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+    <figure class="icon-cards" style="margin: 0 auto;">
+      <div class="icon-cards__content">
+        <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
+          <div style="text-align: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
+            <img src="pythontotal.jpg" alt="Python Total" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
+            <div class="cert-title">Python Total</div>
+            <div class="cert-desc">Curso Avanzado Python</div>
+          </div>
+        </div>
+        <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
+          <div style="text-align: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
+            <img src="oraclecertificacion.jpg" alt="PLSQL ORACLE" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
+            <div class="cert-title">PLSQL ORACLE</div>
+            <div class="cert-desc">DB Programing SQL</div>
+          </div>
+        </div>
+        <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
+          <div style="text-align: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
+            <img src="htmlcertificado.png" alt="HTML5" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
+            <div class="cert-title">HTML5</div>
+            <div class="cert-desc">HTML5 Y CSS AVANZADO</div>
+          </div>
+        </div>
+      </div>
+    </figure>
   </div>
-  <div class="carousel-arrow" id="arrow-right">&#9654;</div>
-</div>
-<script>
-const certs = [
-  { img: "pythontotal.jpg", title: "Python Total", desc: "Curso Avanzado Python" },
-  { img: "oraclecertificacion.jpg", title: "PLSQL ORACLE", desc: "DB Programing SQL" },
-  { img: "htmlcertificado.png", title: "HTML5", desc: "HTML5 Y CSS AVANZADO" },
-  
-];
-let certIdx = 0;
-let certInterval = null;
-let isAnimating = false;
 
-// Renderiza las tarjetas
-function renderCertCarousel() {
-  const inner = document.getElementById('cert-cards-inner');
-  inner.innerHTML = "";
-  const left = (certIdx - 1 + certs.length) % certs.length;
-  const center = certIdx;
-  const right = (certIdx + 1) % certs.length;
+  <div class="checkbox" style="text-align: center;">
+    <input class="d-none" id="toggle-animation" type="checkbox" checked />
+    <label class="checkbox__checkbox" for="toggle-animation"></label>
+    <label class="checkbox__label" for="toggle-animation">Toggle animation</label>
+  </div>
+</section>
 
-  [left, center, right].forEach((idx, i) => {
-    const cert = certs[idx];
-    const card = document.createElement('div');
-    card.className = "cert-card " + (i === 1 ? "main" : "side");
-    card.innerHTML = `
-      <img src="${cert.img}" class="cert-img" alt="${cert.title}">
-      <div class="cert-title">${cert.title}</div>
-      <div class="cert-desc">${cert.desc}</div>
-    `;
-    inner.appendChild(card);
-  });
-  inner.style.transition = 'transform 0.7s cubic-bezier(.57,.24,.4,1.09)';
-  inner.style.transform = 'translateX(0)';
-}
 
-// Mueve el carrusel
-function moveCerts(dir) {
-  if (isAnimating) return;
-  isAnimating = true;
-  const inner = document.getElementById('cert-cards-inner');
-  inner.style.transition = 'transform 0.7s cubic-bezier(.57,.24,.4,1.09)';
-  inner.style.transform = `translateX(${dir * -100}%)`;
-  setTimeout(() => {
-    certIdx = (certIdx + dir + certs.length) % certs.length;
-    renderCertCarousel();
-    isAnimating = false;
-    restartCarouselInterval();
-  }, 700);
-}
-
-// Auto-move
-function nextCertAuto() { moveCerts(1); }
-function restartCarouselInterval() {
-  if (certInterval) clearInterval(certInterval);
-  certInterval = setInterval(nextCertAuto, 4000);
-}
-
-// Drag/swipe con mouse
-let startX = null, dragX = null, dragging = false;
-const frame = document.getElementById('cert-carousel-frame');
-const inner = document.getElementById('cert-cards-inner');
-frame.addEventListener('mousedown', e => {
-  if (isAnimating) return;
-  dragging = true; startX = e.clientX; dragX = 0;
-  inner.style.transition = 'none';
-  clearInterval(certInterval);
-});
-document.addEventListener('mousemove', e => {
-  if (!dragging) return;
-  dragX = e.clientX - startX;
-  inner.style.transform = `translateX(${dragX}px)`;
-});
-document.addEventListener('mouseup', e => {
-  if (!dragging) return;
-  dragging = false;
-  // Si el drag fue suficiente, cambia de tarjeta
-  if (dragX < -60) moveCerts(1);
-  else if (dragX > 60) moveCerts(-1);
-  else {
-    inner.style.transition = 'transform 0.5s cubic-bezier(.57,.24,.4,1.09)';
-    inner.style.transform = 'translateX(0)';
-    restartCarouselInterval();
-  }
-  startX = null; dragX = null;
-});
-
-// También soporta touch para móviles
-frame.addEventListener('touchstart', e => {
-  if (isAnimating) return;
-  dragging = true;
-  startX = e.touches[0].clientX;
-  dragX = 0;
-  inner.style.transition = 'none';
-  clearInterval(certInterval);
-});
-frame.addEventListener('touchmove', e => {
-  if (!dragging) return;
-  dragX = e.touches[0].clientX - startX;
-  inner.style.transform = `translateX(${dragX}px)`;
-});
-frame.addEventListener('touchend', e => {
-  if (!dragging) return;
-  dragging = false;
-  if (dragX < -60) moveCerts(1);
-  else if (dragX > 60) moveCerts(-1);
-  else {
-    inner.style.transition = 'transform 0.5s cubic-bezier(.57,.24,.4,1.09)';
-    inner.style.transform = 'translateX(0)';
-    restartCarouselInterval();
-  }
-  startX = null; dragX = null;
-});
-
-// Flechas y auto
-document.getElementById('arrow-left').addEventListener('click', () => moveCerts(-1));
-document.getElementById('arrow-right').addEventListener('click', () => moveCerts(1));
-frame.addEventListener('mouseenter', () => clearInterval(certInterval));
-frame.addEventListener('mouseleave', restartCarouselInterval);
-
-// Inicializa
-renderCertCarousel();
-restartCarouselInterval();
-</script>
 
     <section id="projects">
       <h2>Projects</h2>
@@ -450,6 +442,13 @@ restartCarouselInterval();
       </a>
     </p>
   </footer>
+<script>
+  function classToggle() {
+  var el = document.querySelector('.icon-cards__content');
+  el.classList.toggle('step-animation');
+}
+
+document.querySelector('#toggle-animation').addEventListener('click', classToggle);</script>
   <script>
   // Cargar el archivo ascii-art.txt y mostrarlo en el fondo
   fetch('ascii-art.txt')
