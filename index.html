@@ -237,6 +237,7 @@
     .cert-img {
       transition: transform 0.3s ease;
     }
+    
 
   </style>
 </head>
@@ -296,7 +297,7 @@
   height: 40vw;
   max-width: 380px;
   max-height: 250px;
-  margin: 0;
+  margin: 0 auto;
   color: white;
   perspective: 1000px;
   transform-origin: center;
@@ -308,12 +309,12 @@
   height: 100%;
   transform-origin: center;
   transform-style: preserve-3d;
-  transform: translateZ(-30vw) rotateY(0);
+  transform: translateZ(-35vw) rotateY(0);
   animation: carousel 10s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
 }
 
 .icon-cards__content.step-animation {
-  animation: carousel 8s infinite steps(1) forwards;
+  animation: carousel 8s infinite steps(4) forwards;
 }
 
 .icon-cards__item {
@@ -324,7 +325,7 @@
   height: 40vw;
   max-width: 380px;
   max-height: 250px;
-  box-shadow: 0 5px 20px rgba(0,0,0,.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   transform-origin: center;
   display: flex;
@@ -333,6 +334,7 @@
   font-size: 4rem;
 }
 
+/* Posiciones para 4 elementos (cada 90°) */
 .icon-cards__item:nth-child(1) {
   background: #FDD94F;
   transform: rotateY(0deg) translateZ(35vw);
@@ -340,29 +342,77 @@
 
 .icon-cards__item:nth-child(2) {
   background: #F87949;
-  transform: rotateY(120deg) translateZ(35vw);
+  transform: rotateY(90deg) translateZ(35vw);
 }
 
 .icon-cards__item:nth-child(3) {
   background: #FBAB48;
-  transform: rotateY(240deg) translateZ(35vw);
+  transform: rotateY(180deg) translateZ(35vw);
+}
+
+.icon-cards__item:nth-child(4) {
+  background: #5A9BFF;
+  transform: rotateY(270deg) translateZ(35vw);
+}
+
+/* Animación rotatoria para 4 elementos */
+@keyframes carousel {
+  0%, 20%    { transform: translateZ(-35vw) rotateY(0); }
+  25%, 45%   { transform: translateZ(-35vw) rotateY(-90deg); }
+  50%, 70%   { transform: translateZ(-35vw) rotateY(-180deg); }
+  75%, 95%   { transform: translateZ(-35vw) rotateY(-270deg); }
+  100%       { transform: translateZ(-35vw) rotateY(-360deg); }
 }
 
 @keyframes carousel {
-  0%, 17.5% { transform: translateZ(-35vw) rotateY(0); }
-  27.5%, 45% { transform: translateZ(-35vw) rotateY(-120deg); }
-  55%, 72.5% { transform: translateZ(-35vw) rotateY(-240deg); }
-  82.5%, 100% { transform: translateZ(-35vw) rotateY(-360deg); }
+  0%, 20%    { transform: translateZ(-35vw) rotateY(0); }
+  25%, 45%   { transform: translateZ(-35vw) rotateY(-90deg); }
+  50%, 70%   { transform: translateZ(-35vw) rotateY(-180deg); }
+  75%, 95%   { transform: translateZ(-35vw) rotateY(-270deg); }
+  100%       { transform: translateZ(-35vw) rotateY(-360deg); }
 }
+
+@media screen and (min-width: 768px) {
+  .icon-cards__content {
+    transform: translateZ(-20vw) rotateY(0);
+  }
+
+  .icon-cards__item:nth-child(1) {
+    transform: rotateY(0deg) translateZ(20vw);
+  }
+
+  .icon-cards__item:nth-child(2) {
+    transform: rotateY(90deg) translateZ(20vw);
+  }
+
+  .icon-cards__item:nth-child(3) {
+    transform: rotateY(180deg) translateZ(20vw);
+  }
+
+  .icon-cards__item:nth-child(4) {
+    transform: rotateY(270deg) translateZ(20vw);
+  }
+
+  @keyframes carousel {
+    0%, 20%    { transform: translateZ(-20vw) rotateY(0); }
+    25%, 45%   { transform: translateZ(-20vw) rotateY(-90deg); }
+    50%, 70%   { transform: translateZ(-20vw) rotateY(-180deg); }
+    75%, 95%   { transform: translateZ(-20vw) rotateY(-270deg); }
+    100%       { transform: translateZ(-20vw) rotateY(-360deg); }
+  }
+}
+
 
 
 </style>
 
 <section id="carrucel">
-  <h2 style="text-align:center;">Certificaciones destacadas</h2>
+  <h2 style="text-align: center;">Certificaciones destacadas</h2>
   <div style="display: flex; justify-content: center; margin-bottom: 20px;">
     <figure class="icon-cards" style="margin: 0 auto;">
       <div class="icon-cards__content">
+        
+        <!-- Certificado 1 -->
         <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
           <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
             <img src="pythontotal.jpg" alt="Python Total" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
@@ -370,6 +420,8 @@
             <div class="cert-desc">Curso Avanzado Python</div>
           </div>
         </div>
+
+        <!-- Certificado 2 -->
         <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
           <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
             <img src="oraclecertificacion.jpg" alt="PLSQL ORACLE" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
@@ -377,16 +429,30 @@
             <div class="cert-desc">DB Programing SQL</div>
           </div>
         </div>
+
+        <!-- Certificado 3 -->
         <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
           <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
             <img src="htmlcertificado.png" alt="HTML5" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
             <div class="cert-title">HTML5</div>
-            <div class="cert-desc">HTML5 Y CSS AVANZADO</div>
+            <div class="cert-desc">HTML5 y CSS Avanzado</div>
           </div>
         </div>
+
+        <!-- Certificado 4 -->
+        <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
+          <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
+            <img src="fullstack.jpg" alt="Fullstack" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
+            <div class="cert-title">Fullstack</div>
+            <div class="cert-desc">Desarrollo Web Fullstack</div>
+          </div>
+        </div>
+
       </div>
     </figure>
   </div>
+
+
 
   <div class="checkbox" style="text-align: center;">
     <input class="d-none" id="toggle-animation" type="checkbox" checked />
