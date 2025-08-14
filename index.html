@@ -42,7 +42,7 @@
     }
     nav a:hover { background: #ff80ff; color: #000; }
     main {
-      max-width: 900px;
+      max-width: 60%;
       margin: 20px auto;
       background: rgba(0, 0, 0, 0.65);
       padding: 20px 30px;
@@ -234,15 +234,14 @@
       z-index: 10;
       transition: transform 0.4s ease;
     }
-
     .cert-img {
       transition: transform 0.3s ease;
     }
-    
-
   </style>
 </head>
 <body>
+  <!-- Fondo lluvia pixelart -->
+  <canvas id="rain-canvas"></canvas>
   <div id="ascii-bg"></div>
   <header>
     <h1>Welcome to Ogidok dev</h1>
@@ -255,16 +254,12 @@
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
-    
-    
   </header>
   <main>
     <section id="about">
       <h2>Sobre mi</h2>
       <p>Hola, soy <strong>Diego aka Ogidok</strong>, desarrollador fullstack formado en la Universidad INACAP y mayoritariamente autodidacta desde los 15. Me apasiona crear páginas web y mini proyectos por amor al arte. Usé Linux como sistema principal durante un año y aún lo manejo periódicamente, lo que me permitió aprender sobre ciberseguridad, scripting en bash y administración de sistemas. Disfruto explorar nuevas tecnologías y mejorar mis habilidades constantemente.</p>
     </section>
-
-    <!-- NUEVA SECCIÓN: SKILLS -->
     <section id="skills">
       <h2>Skills</h2>
       <div class="skills-list">
@@ -284,198 +279,151 @@
         <span class="skill-badge">GitHub</span>
       </div>
     </section>
-
-    <!-- CARRUSEL DE CERTIFICACIONES (3 a la vista) -->
-    <!-- Carrusel con drag/swipe en desktop y animación suave -->
-
-
-
-
-<style>
-.icon-cards {
-  position: relative;
-  width: 60vw;
-  height: 40vw;
-  max-width: 380px;
-  max-height: 250px;
-  margin: 0 auto;
-  color: white;
-  perspective: 1000px;
-  transform-origin: center;
-}
-
-.icon-cards__content {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform-origin: center;
-  transform-style: preserve-3d;
-  transform: translateZ(-35vw) rotateY(0);
-  animation: carousel 10s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
-}
-
-.icon-cards__content.step-animation {
-  animation: carousel 8s infinite steps(4) forwards;
-}
-
-.icon-cards__item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60vw;
-  height: 40vw;
-  max-width: 380px;
-  max-height: 250px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  transform-origin: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
-}
-
-/* Posiciones para 4 elementos (cada 90°) */
-.icon-cards__item:nth-child(1) {
-  background: #FDD94F;
-  transform: rotateY(0deg) translateZ(35vw);
-}
-
-.icon-cards__item:nth-child(2) {
-  background: #F87949;
-  transform: rotateY(90deg) translateZ(35vw);
-}
-
-.icon-cards__item:nth-child(3) {
-  background: #FBAB48;
-  transform: rotateY(180deg) translateZ(35vw);
-}
-
-.icon-cards__item:nth-child(4) {
-  background: #5A9BFF;
-  transform: rotateY(270deg) translateZ(35vw);
-}
-
-/* Animación rotatoria para 4 elementos */
-@keyframes carousel {
-  0%, 20%    { transform: translateZ(-35vw) rotateY(0); }
-  25%, 45%   { transform: translateZ(-35vw) rotateY(-90deg); }
-  50%, 70%   { transform: translateZ(-35vw) rotateY(-180deg); }
-  75%, 95%   { transform: translateZ(-35vw) rotateY(-270deg); }
-  100%       { transform: translateZ(-35vw) rotateY(-360deg); }
-}
-
-@keyframes carousel {
-  0%, 20%    { transform: translateZ(-35vw) rotateY(0); }
-  25%, 45%   { transform: translateZ(-35vw) rotateY(-90deg); }
-  50%, 70%   { transform: translateZ(-35vw) rotateY(-180deg); }
-  75%, 95%   { transform: translateZ(-35vw) rotateY(-270deg); }
-  100%       { transform: translateZ(-35vw) rotateY(-360deg); }
-}
-
-@media screen and (min-width: 768px) {
-  .icon-cards__content {
-    transform: translateZ(-20vw) rotateY(0);
-  }
-
-  .icon-cards__item:nth-child(1) {
-    transform: rotateY(0deg) translateZ(20vw);
-  }
-
-  .icon-cards__item:nth-child(2) {
-    transform: rotateY(90deg) translateZ(20vw);
-  }
-
-  .icon-cards__item:nth-child(3) {
-    transform: rotateY(180deg) translateZ(20vw);
-  }
-
-  .icon-cards__item:nth-child(4) {
-    transform: rotateY(270deg) translateZ(20vw);
-  }
-
-  @keyframes carousel {
-    0%, 20%    { transform: translateZ(-20vw) rotateY(0); }
-    25%, 45%   { transform: translateZ(-20vw) rotateY(-90deg); }
-    50%, 70%   { transform: translateZ(-20vw) rotateY(-180deg); }
-    75%, 95%   { transform: translateZ(-20vw) rotateY(-270deg); }
-    100%       { transform: translateZ(-20vw) rotateY(-360deg); }
-  }
-}
-
-
-
-</style>
-<section id="carrucel">
-  <h2 style="text-align: center;">Certificaciones destacadas</h2>
-  <div style="display: flex; justify-content: center; margin-bottom: 20px;">
-    <figure class="icon-cards" style="margin: 0 auto;">
-      <div class="icon-cards__content">
-        
-        <!-- Certificado 1 -->
-        <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
-          <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
-            <img src="certs/pythontotal.jpg" alt="Python Total" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
-            <div class="cert-title">Python Total</div>
-            <div class="cert-desc">Curso Avanzado Python</div>
+    <style>
+      .icon-cards {
+        position: relative;
+        width: 60vw;
+        height: 40vw;
+        max-width: 380px;
+        max-height: 250px;
+        margin: 0 auto;
+        color: white;
+        perspective: 1000px;
+        transform-origin: center;
+      }
+      .icon-cards__content {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform: translateZ(-35vw) rotateY(0);
+        animation: carousel 10s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      }
+      .icon-cards__content.step-animation {
+        animation: carousel 8s infinite steps(4) forwards;
+      }
+      .icon-cards__item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60vw;
+        height: 40vw;
+        max-width: 380px;
+        max-height: 250px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        transform-origin: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+      }
+      .icon-cards__item:nth-child(1) {
+        background: #FDD94F;
+        transform: rotateY(0deg) translateZ(35vw);
+      }
+      .icon-cards__item:nth-child(2) {
+        background: #F87949;
+        transform: rotateY(90deg) translateZ(35vw);
+      }
+      .icon-cards__item:nth-child(3) {
+        background: #FBAB48;
+        transform: rotateY(180deg) translateZ(35vw);
+      }
+      .icon-cards__item:nth-child(4) {
+        background: #5A9BFF;
+        transform: rotateY(270deg) translateZ(35vw);
+      }
+      @keyframes carousel {
+        0%, 20%    { transform: translateZ(-35vw) rotateY(0); }
+        25%, 45%   { transform: translateZ(-35vw) rotateY(-90deg); }
+        50%, 70%   { transform: translateZ(-35vw) rotateY(-180deg); }
+        75%, 95%   { transform: translateZ(-35vw) rotateY(-270deg); }
+        100%       { transform: translateZ(-35vw) rotateY(-360deg); }
+      }
+      @media screen and (min-width: 768px) {
+        .icon-cards__content {
+          transform: translateZ(-20vw) rotateY(0);
+        }
+        .icon-cards__item:nth-child(1) {
+          transform: rotateY(0deg) translateZ(20vw);
+        }
+        .icon-cards__item:nth-child(2) {
+          transform: rotateY(90deg) translateZ(20vw);
+        }
+        .icon-cards__item:nth-child(3) {
+          transform: rotateY(180deg) translateZ(20vw);
+        }
+        .icon-cards__item:nth-child(4) {
+          transform: rotateY(270deg) translateZ(20vw);
+        }
+        @keyframes carousel {
+          0%, 20%    { transform: translateZ(-20vw) rotateY(0); }
+          25%, 45%   { transform: translateZ(-20vw) rotateY(-90deg); }
+          50%, 70%   { transform: translateZ(-20vw) rotateY(-180deg); }
+          75%, 95%   { transform: translateZ(-20vw) rotateY(-270deg); }
+          100%       { transform: translateZ(-20vw) rotateY(-360deg); }
+        }
+      }
+    </style>
+    <section id="carrucel">
+      <h2 style="text-align: center;">Certificaciones destacadas</h2>
+      <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+        <figure class="icon-cards" style="margin: 0 auto;">
+          <div class="icon-cards__content">
+            <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
+              <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
+                <img src="certs/pythontotal.jpg" alt="Python Total" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
+                <div class="cert-title">Python Total</div>
+                <div class="cert-desc">Curso Avanzado Python</div>
+              </div>
+            </div>
+            <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
+              <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
+                <img src="certs/oraclecertificacion.jpg" alt="PLSQL ORACLE" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
+                <div class="cert-title">PLSQL ORACLE</div>
+                <div class="cert-desc">DB Programing SQL</div>
+              </div>
+            </div>
+            <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
+              <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
+                <img src="certs/htmlcertificado.png" alt="HTML5" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
+                <div class="cert-title">HTML5</div>
+                <div class="cert-desc">HTML5 y CSS Avanzado</div>
+              </div>
+            </div>
+            <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
+              <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
+                <img src="certs/fullstack.jpg" alt="Fullstack" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
+                <div class="cert-title">Fullstack</div>
+                <div class="cert-desc">Desarrollo Web Fullstack</div>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <!-- Certificado 2 -->
-        <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
-          <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
-            <img src="certs/oraclecertificacion.jpg" alt="PLSQL ORACLE" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
-            <div class="cert-title">PLSQL ORACLE</div>
-            <div class="cert-desc">DB Programing SQL</div>
-          </div>
-        </div>
-
-        <!-- Certificado 3 -->
-        <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
-          <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
-            <img src="certs/htmlcertificado.png" alt="HTML5" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
-            <div class="cert-title">HTML5</div>
-            <div class="cert-desc">HTML5 y CSS Avanzado</div>
-          </div>
-        </div>
-
-        <!-- Certificado 4 -->
-        <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
-          <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
-            <img src="certs/fullstack.jpg" alt="Fullstack" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
-            <div class="cert-title">Fullstack</div>
-            <div class="cert-desc">Desarrollo Web Fullstack</div>
-          </div>
-        </div>
-
+        </figure>
       </div>
-    </figure>
-  </div>
-
-
-
-  <div class="checkbox" style="text-align: center;">
-    <input class="d-none" id="toggle-animation" type="checkbox" checked />
-    <label class="checkbox__checkbox" for="toggle-animation"></label>
-    <label class="checkbox__label" for="toggle-animation">Toggle animation</label>
-  </div>
-</section>
-
+      <div class="checkbox" style="text-align: center;">
+        <input class="d-none" id="toggle-animation" type="checkbox" checked />
+        <label class="checkbox__checkbox" for="toggle-animation"></label>
+        <label class="checkbox__label" for="toggle-animation">Toggle animation</label>
+      </div>
+    </section>
     <section id="projects">
       <h2>Projects</h2>
       <div class="proj-grid">
         <article class="project-card">
-            <h3>Pasate1rollo</h3>
-            <img src="proyects/pst1r.png" alt="Pasate1rollo preview" style="width:100%; border: 1px solid #ff80ff; margin-bottom: 10px;">
-            <p>E-commerce desde 0 para pyme de impresiones de stickers. Hecho con Django, Python, JS, HTML y CSS.</p>
-            <a href="https://github.com/ogidok/Front-Pasate1rollo" target="_blank">GitHub</a>
+          <h3>Pasate1rollo</h3>
+          <img src="proyects/pst1r.png" alt="Pasate1rollo preview" style="width:100%; border: 1px solid #ff80ff; margin-bottom: 10px;">
+          <p>E-commerce desde 0 para pyme de impresiones de stickers. Hecho con Django, Python, JS, HTML y CSS.</p>
+          <a href="https://github.com/ogidok/Front-Pasate1rollo" target="_blank">GitHub</a>
         </article>
         <article class="project-card">
           <h3>Focus</h3>
           <img src="proyects/focus.png" alt="Focus extension preview" style="width:100%; border: 1px solid #ff80ff; margin-bottom: 10px;">
-            <p>Extensión para bloquear Shorts de YouTube y otras distracciones, ayudando a mejorar la productividad.</p>
-            <a href="https://github.com/ogidok/shorts-block" target="_blank">GitHub</a><br>
-            <a href="https://chromewebstore.google.com/detail/ackjcgofogmpcbeompglomgbnjobpbkp?utm_source=item-share-cb" target="_blank">Chrome Store</a>
+          <p>Extensión para bloquear Shorts de YouTube y otras distracciones, ayudando a mejorar la productividad.</p>
+          <a href="https://github.com/ogidok/shorts-block" target="_blank">GitHub</a><br>
+          <a href="https://chromewebstore.google.com/detail/ackjcgofogmpcbeompglomgbnjobpbkp?utm_source=item-share-cb" target="_blank">Chrome Store</a>
         </article>
         <article class="project-card">
           <h3>CatFromPort</h3>
@@ -490,71 +438,82 @@
         </article>
       </div>
     </section>
-
     <section id="contact">
       <h2>Encuéntrame en la web</h2>
       <ul>
         <li>Email: <a >diegomesinaes@gmail.com</a></li>
         <li>GitHub: <a href="https://github.com/ogidok" target="_blank">https://github.com/ogidok</a></li>
-         </ul>
+      </ul>
     </section>
   </main>
-<footer>
+  <footer>
     <p>Powered by Ogidok &mdash; 
       <a href="https://github.com/ogidok" target="_blank" style="vertical-align:middle;">
         <span style="display:inline-block; vertical-align:middle; margin-right:4px;">
           <!-- Pixelart GitHub logo SVG -->
           <svg width="18" height="18" viewBox="0 0 18 18" style="image-rendering:pixelated;" xmlns="http://www.w3.org/2000/svg">
-          <rect width="18" height="18" fill="#18101b"/>
-          <rect x="4" y="3" width="10" height="10" fill="#fff"/>
-          <rect x="6" y="5" width="6" height="6" fill="#18101b"/>
-          <rect x="7" y="7" width="1" height="1" fill="#fff"/>
-          <rect x="10" y="7" width="1" height="1" fill="#fff"/>
-          <rect x="8" y="9" width="2" height="1" fill="#fff"/>
+            <rect width="18" height="18" fill="#18101b"/>
+            <rect x="4" y="3" width="10" height="10" fill="#fff"/>
+            <rect x="6" y="5" width="6" height="6" fill="#18101b"/>
+            <rect x="7" y="7" width="1" height="1" fill="#fff"/>
+            <rect x="10" y="7" width="1" height="1" fill="#fff"/>
+            <rect x="8" y="9" width="2" height="1" fill="#fff"/>
           </svg>
         </span>
         github.com/ogidok
       </a>
     </p>
-    <p id="visit-counter" style="margin-top:10px; font-size:0.8rem; color:#ff80ff;">
-      Visitas totales: <span id="visits"></span>
-    </p>
+    
   </footer>
   <script>
-    // Contador público de visitas usando countapi.xyz
-    fetch('https://api.countapi.xyz/hit/ogidok.github.io/portafolio')
-      .then(response => response.json())
-      .then(data => {
-        document.getElementById('visits').textContent = data.value;
-      });
-  </script>
-<script>
-  function classToggle() {
-  var el = document.querySelector('.icon-cards__content');
-  el.classList.toggle('step-animation');
-}
-
-document.querySelector('#toggle-animation').addEventListener('click', classToggle);</script>
-  <script>
-  // Cargar el archivo ascii-art.txt y mostrarlo en el fondo
-  fetch('ascii-art.txt')
-    .then(r => r.text())
-    .then(text => {
-      let result = '';
-      let cols = Math.floor(window.innerWidth / 8);
-      let rows = Math.floor(window.innerHeight / 10);
-      for (let i = 0; i < rows; i++) {
-        let line = '';
-        for (let j = 0; j < cols; j++) {
-          let char = text[(i * cols + j) % text.length];
-          line += char;
+    // Fondo lluvia pixelart tipo Matrix
+    const canvas = document.getElementById('rain-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.style.position = "fixed";
+    canvas.style.top = 0;
+    canvas.style.left = 0;
+    canvas.style.width = "100vw";
+    canvas.style.height = "100vh";
+    canvas.style.zIndex = 0;
+    canvas.style.pointerEvents = "none";
+    canvas.style.opacity = 0.25;
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    const fontSize = 16;
+    let columns, drops;
+    function setupRain() {
+      columns = Math.floor(canvas.width / fontSize);
+      drops = Array(columns).fill(1);
+    }
+    setupRain();
+    window.addEventListener('resize', setupRain);
+    function drawRain() {
+      ctx.fillStyle = "rgba(0,0,0,0.6)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.font = fontSize + "px 'Press Start 2P', monospace";
+      ctx.fillStyle = "#ff80ff";
+      for (let i = 0; i < drops.length; i++) {
+        const text = String.fromCharCode(0x2592 + Math.floor(Math.random() * 10));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
         }
-        result += line + '\n';
+        drops[i]++;
       }
-      document.getElementById('ascii-bg').textContent = result;
-    });
-
-  
+    }
+    setInterval(drawRain, 60);
+  </script>
+ 
+  <script>
+    function classToggle() {
+      var el = document.querySelector('.icon-cards__content');
+      el.classList.toggle('step-animation');
+    }
+    document.querySelector('#toggle-animation').addEventListener('click', classToggle);
   </script>
   
 </body>
