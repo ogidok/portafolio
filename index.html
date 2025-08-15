@@ -18,9 +18,9 @@
     a:hover { text-decoration: underline; }
     header {
       text-align: center;
-      padding: 40px 20px;
-      background: rgba(0, 0, 0, 0.6);
-      border-bottom: 4px dashed #ff80ff;
+      padding: 40px 20px 0 20px;
+      background: none;
+      border-bottom: none;
       position: relative;
       z-index: 1;
     }
@@ -28,19 +28,100 @@
       font-size: 2rem;
       margin-bottom: 10px;
       animation: glow 2s ease-in-out infinite alternate;
+      color: #fff;
+      text-shadow: 0 0 10px #ff80ff, 0 0 32px #ff80ff;
+      letter-spacing: 4px;
+    }
+    header p {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+      text-shadow: 0 0 4px #ff80ff88;
     }
     @keyframes glow {
-      from { text-shadow: 0 0 5px #ff80ff; }
-      to   { text-shadow: 0 0 20px #ff80ff; }
+      from { text-shadow: 0 0 12px #ff80ff; }
+      to   { text-shadow: 0 0 32px #ff80ff; }
     }
-    nav a {
-      margin: 0 8px;
-      padding: 4px 6px;
-      background: #111;
-      border: 2px solid #ff80ff;
+    /* NAVBAR TERMINAL OHMYZSH */
+    .terminal-navbar {
+      border-bottom: 2px solid #00ffd0;
+      font-family: 'Press Start 2P', monospace;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      background: none;
+      box-shadow: none;
+    }
+    .terminal-bar {
+      padding: 16px 20px 8px 20px;
+      font-size: 1.08rem;
+      color: #b6fcd5;
+      letter-spacing: 2px;
+      border-bottom: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: none;
+    }
+    .user-host .user { color: #ff80ff; }
+    .user-host .host { color: #45f3ff; }
+    .user-host .dir { color: #f7ff7a; }
+    .dollar { color: #b6fcd5; font-weight: bold; margin-left: 8px; margin-right: 3px;}
+    .cmd { color: #f7ff7a; }
+    .terminal-links {
+      display: flex;
+      gap: 16px;
+      padding: 8px 22px 8px 22px;
+      flex-wrap: wrap;
+      background: none;
+      border-bottom: 3px dashed #00ffd0;
+      border-top: none;
+    }
+    .terminal-links a {
+      color: #00ffd0;
+      background: none;
+      border: 2px solid #00ffd0;
       border-radius: 4px;
+      padding: 4px 12px;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      transition: background 0.13s, color 0.13s, border 0.13s;
+      text-shadow: 0 0 3px #00ffd088;
+      display: inline-block;
     }
-    nav a:hover { background: #ff80ff; color: #000; }
+    .terminal-links a:hover {
+      background: #00ffd0;
+      color: #18101b;
+      border-color: #ff80ff;
+      text-shadow: none;
+    }
+    /* BLOQUE WELCOME PIXEL */
+    .welcome-block {
+      max-width: 690px;
+      margin: 36px auto 0 auto;
+      background: rgba(0,0,0,0.75);
+      border: 3px solid #ff80ff;
+      box-shadow: 0 0 16px #ff80ff60, 0 2px 18px #18101b99;
+      border-radius: 0;
+      text-align: center;
+      padding: 36px 10px 26px 10px;
+      position: relative;
+    }
+    .welcome-block h1 {
+      font-size: 2.2rem;
+      margin: 0 0 12px 0;
+      color: #fff;
+      text-shadow: 0 0 10px #ff80ff, 0 0 40px #ff80ff;
+      letter-spacing: 4px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    .welcome-block p {
+      color: #fff;
+      font-size: 1.05rem;
+      margin: 0;
+      text-shadow: 0 0 4px #ff80ff88;
+    }
     main {
       max-width: 60%;
       margin: 20px auto;
@@ -177,20 +258,6 @@
       text-align: center;
       min-height: 36px;
     }
-    @media (max-width: 700px) {
-      .cert-carousel-outer { max-width: 99vw; }
-      .cert-card { min-width: 110px; max-width: 130px; min-height: 110px; }
-      .cert-img { max-width: 80px; max-height: 48px; }
-      .cert-title { font-size: 0.62rem; }
-    }
-    @media (max-width: 480px) {
-      header h1 { font-size: 1.2rem; }
-      nav a { display: inline-block; margin: 4px 4px; font-size: 0.6rem; }
-      body { font-size: 10px; }
-      .cert-carousel-outer { min-height: 100px; }
-      .cert-card { padding: 5px 2px; }
-      .cert-carousel-frame { min-height: 100px; }
-    }
     .proj-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -202,6 +269,23 @@
       border: 2px solid #ff80ff;
     }
     .project-card h3 { font-size: 1rem; margin-bottom: 10px; }
+    .project-card img {
+      display: block;
+      margin: 0 auto 10px auto;
+      border: 1.5px solid #ff80ff;
+      max-width: 340px;
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 0 2px 12px #0008;
+      transition: transform 0.18s cubic-bezier(0.6,0,0.4,1);
+      background: #222;
+    }
+    .project-card img:hover {
+      transform: scale(1.07);
+      box-shadow: 0 4px 24px #ff80ff77;
+      z-index: 2;
+    }
     footer {
       text-align: center;
       padding: 15px 10px;
@@ -237,22 +321,46 @@
     .cert-img {
       transition: transform 0.3s ease;
     }
+    @media (max-width: 700px) {
+      .welcome-block { max-width: 99vw; padding: 20px 2vw;}
+      main { max-width: 99vw; padding: 10px 2vw;}
+      .cert-carousel-outer { max-width: 99vw; }
+      .cert-card { min-width: 110px; max-width: 130px; min-height: 110px; }
+      .cert-img { max-width: 80px; max-height: 48px; }
+      .cert-title { font-size: 0.62rem; }
+      .project-card img { max-width: 95vw; }
+    }
+    @media (max-width: 480px) {
+      .welcome-block h1 { font-size: 1.2rem; }
+      nav a { display: inline-block; margin: 4px 4px; font-size: 0.6rem; }
+      body { font-size: 10px; }
+      .cert-carousel-outer { min-height: 100px; }
+      .cert-card { padding: 5px 2px; }
+      .cert-carousel-frame { min-height: 100px; }
+      .project-card img { max-width: 95vw; }
+    }
   </style>
 </head>
 <body>
-  <!-- Fondo lluvia pixelart -->
   <canvas id="rain-canvas"></canvas>
   <div id="ascii-bg"></div>
   <header>
     <h1>Welcome to Ogidok dev</h1>
     <p>inspirado en la epoca dorada del internet </p>
-    <br>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#about">Skills</a>
-      <a href="#skills">Certificaciones</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+    <nav class="terminal-navbar" id="nav">
+      <div class="terminal-bar">
+        <span class="user-host"><span class="user">ogidok</span>@<span class="host">portfolio</span> <span class="dir">~</span></span>
+        <span class="dollar">$</span>
+        <span class="cmd">ls</span>
+      </div>
+      <div class="terminal-links">
+        <a href="#nav">./about</a>
+        <a href="#about">./skills</a>
+        <a href="#skills">./certificaciones</a>
+        <a href="#carrucel">./projects</a>
+        <a href="#projects">./contact</a>
+        <a href="https://github.com/ogidok" target="_blank">github.com/ogidok</a>
+      </div>
     </nav>
   </header>
   <main>
@@ -414,20 +522,20 @@
       <div class="proj-grid">
         <article class="project-card">
           <h3>Pasate1rollo</h3>
-          <img src="proyects/pst1r.png" alt="Pasate1rollo preview" style="width:100%; border: 1px solid #ff80ff; margin-bottom: 10px;">
+          <img src="proyects/pst1r.png" alt="Pasate1rollo preview">
           <p>E-commerce desde 0 para pyme de impresiones de stickers. Hecho con Django, Python, JS, HTML y CSS.</p>
           <a href="https://github.com/ogidok/Front-Pasate1rollo" target="_blank">GitHub</a>
         </article>
         <article class="project-card">
           <h3>Focus</h3>
-          <img src="proyects/focus.png" alt="Focus extension preview" style="width:100%; border: 1px solid #ff80ff; margin-bottom: 10px;">
+          <img src="proyects/focus.png" alt="Focus extension preview">
           <p>Extensión para bloquear Shorts de YouTube y otras distracciones, ayudando a mejorar la productividad.</p>
           <a href="https://github.com/ogidok/shorts-block" target="_blank">GitHub</a><br>
           <a href="https://chromewebstore.google.com/detail/ackjcgofogmpcbeompglomgbnjobpbkp?utm_source=item-share-cb" target="_blank">Chrome Store</a>
         </article>
         <article class="project-card">
           <h3>CatFromPort</h3>
-          <img src="proyects/m5stick.png" alt="mish" style="width:100%; border: 1px solid #ff80ff; margin-bottom: 10px;">
+          <img src="proyects/m5stick.png" alt="mish">
           <p>Proyecto en idea y Desarrollo en hiatus: firmware inspirado en Bruce pero mejorado, pensado para cuando tenga más tiempo. Bruce tiene varias carencias que busco solucionar. Hecho con micropython</p>
           <a href="https://github.com/ogidok/CatFromPort" target="_blank">GitHub</a>
         </article>
@@ -463,7 +571,6 @@
         github.com/ogidok
       </a>
     </p>
-    
   </footer>
   <script>
     // Fondo lluvia pixelart tipo Matrix
@@ -507,7 +614,6 @@
     }
     setInterval(drawRain, 60);
   </script>
- 
   <script>
     function classToggle() {
       var el = document.querySelector('.icon-cards__content');
@@ -515,6 +621,5 @@
     }
     document.querySelector('#toggle-animation').addEventListener('click', classToggle);
   </script>
-  
 </body>
 </html>
