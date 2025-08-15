@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Ogidok</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="icon" href="logo.png" type="image/png">
   <style>
@@ -13,12 +13,14 @@
       background: black;
       color: white;
       line-height: 1.4;
+      -webkit-tap-highlight-color: transparent;
+      scroll-behavior: smooth;
     }
     a { color: #ff80ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
     header {
       text-align: center;
-      padding: 40px 20px 0 20px;
+      padding: 32px 8px 0 8px;
       background: none;
       border-bottom: none;
       position: relative;
@@ -51,7 +53,7 @@
       box-shadow: none;
     }
     .terminal-bar {
-      padding: 16px 20px 8px 20px;
+      padding: 14px 10px 8px 10px;
       font-size: 1.08rem;
       color: #b6fcd5;
       letter-spacing: 2px;
@@ -69,9 +71,9 @@
     .cmd { color: #f7ff7a; }
     .terminal-links {
       display: flex;
-      gap: 16px;
-      padding: 8px 22px 8px 22px;
       flex-wrap: wrap;
+      gap: 12px;
+      padding: 8px 8px 8px 8px;
       background: none;
       border-bottom: 3px dashed #00ffd0;
       border-top: none;
@@ -82,7 +84,7 @@
       background: none;
       border: 2px solid #00ffd0;
       border-radius: 4px;
-      padding: 4px 12px;
+      padding: 4px 8px;
       font-size: 1rem;
       font-weight: bold;
       letter-spacing: 1px;
@@ -91,7 +93,8 @@
       text-shadow: 0 0 3px #00ffd088;
       display: inline-block;
       text-align: center;
-      min-width: 110px;
+      min-width: 100px;
+      word-break: break-word;
     }
     .terminal-links a:hover {
       background: #00ffd0;
@@ -105,7 +108,7 @@
       background: rgba(0,0,0,0.75);
       border: 3px solid #ff80ff;
       box-shadow: 0 0 16px #ff80ff60, 0 2px 18px #18101b99;
-      border-radius: 0;
+      border-radius: 8px;
       text-align: center;
       padding: 36px 10px 26px 10px;
       position: relative;
@@ -128,26 +131,28 @@
       max-width: 60%;
       margin: 20px auto;
       background: rgba(0, 0, 0, 0.65);
-      padding: 20px 30px;
+      padding: 16px 12px;
       border: 3px double #ff80ff;
       position: relative;
       z-index: 1;
+      border-radius: 10px;
     }
-    section { margin-bottom: 40px; }
+    section { margin-bottom: 32px; }
     h2 { font-size: 1.2rem; margin-bottom: 20px; border-bottom: 2px dashed #ff80ff; padding-bottom: 6px; }
     .skills-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 8px;
       margin-bottom: 20px;
+      justify-content: center;
     }
     .skill-badge {
       background: #111;
       border: 2px dashed #ff80ff;
       color: #ff80ff;
-      padding: 8px 16px;
-      font-size: 0.9rem;
-      border-radius: 8px;
+      padding: 7px 14px;
+      font-size: 0.85rem;
+      border-radius: 7px;
       text-transform: uppercase;
       letter-spacing: 2px;
       box-shadow: 0 2px 8px #0008;
@@ -164,9 +169,9 @@
       align-items: center;
       margin: 0 auto;
       max-width: 700px;
-      min-height: 310px;
+      min-height: 220px;
       position: relative;
-      margin-bottom: 32px;
+      margin-bottom: 24px;
     }
     .carousel-arrow {
       background: #111;
@@ -192,10 +197,10 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      gap: 22px;
+      gap: 18px;
       position: relative;
       overflow: hidden;
-      min-height: 230px;
+      min-height: 120px;
     }
     .cert-cards-inner {
       display: flex;
@@ -205,29 +210,30 @@
     .cert-card {
       background: #111;
       border: 3px double #ff80ff;
-      box-shadow: 0 0 24px #ff80ff44;
-      padding: 10px 12px;
+      box-shadow: 0 0 18px #ff80ff44;
+      padding: 10px 8px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      min-width: 170px;
+      min-width: 140px;
       max-width: 210px;
-      min-height: 230px;
+      min-height: 120px;
       transition: transform 0.2s, opacity 0.2s, filter 0.13s;
       opacity: 1;
-      margin: 0 10px;
+      margin: 0 7px;
+      border-radius: 10px;
     }
     .cert-card.main {
-      transform: scale(1.12);
+      transform: scale(1.09);
       z-index: 2;
       opacity: 1;
       border: 4px double #ff80ff;
-      box-shadow: 0 0 24px #ff80ff99;
+      box-shadow: 0 0 18px #ff80ff99;
       background: #18101b;
       filter: none;
     }
     .cert-card.side {
-      transform: scale(0.9);
+      transform: scale(0.92);
       opacity: 0.7;
       filter: grayscale(0.7) blur(0.5px);
       background: #1a1a23;
@@ -235,9 +241,9 @@
       z-index: 1;
     }
     .cert-img {
-      max-width: 150px;
-      max-height: 80px;
-      margin-bottom: 10px;
+      max-width: 120px;
+      max-height: 60px;
+      margin-bottom: 7px;
       border: 2px dashed #ff80ff;
       background: #222;
       display: block;
@@ -246,34 +252,39 @@
     }
     .cert-title {
       color: #ff80ff;
-      font-size: 0.82rem;
-      margin-bottom: 4px;
-      margin-top: 4px;
+      font-size: 0.74rem;
+      margin-bottom: 2px;
+      margin-top: 2px;
       text-shadow: 0 0 6px #ff80ff88;
       text-align: center;
+      word-break: break-word;
     }
     .cert-desc {
       color: #fff;
-      font-size: 0.65rem;
+      font-size: 0.61rem;
       text-align: center;
-      min-height: 36px;
+      min-height: 20px;
+      word-break: break-word;
     }
     .proj-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
     }
     .project-card {
       background: #111;
-      padding: 15px;
+      padding: 11px;
       border: 2px solid #ff80ff;
+      border-radius: 8px;
+      box-shadow: 0 2px 12px #ff80ff22;
+      word-break: break-word;
     }
-    .project-card h3 { font-size: 1rem; margin-bottom: 10px; }
+    .project-card h3 { font-size: 1rem; margin-bottom: 8px; }
     .project-card img {
       display: block;
-      margin: 0 auto 10px auto;
+      margin: 0 auto 7px auto;
       border: 1.5px solid #ff80ff;
-      max-width: 340px;
+      max-width: 100%;
       width: 100%;
       height: auto;
       border-radius: 5px;
@@ -288,9 +299,9 @@
     }
     footer {
       text-align: center;
-      padding: 15px 10px;
+      padding: 13px 7px;
       background: rgba(0,0,0,0.7);
-      border-top: 4px dashed #ff80ff;
+      border-top: 3px dashed #ff80ff;
       font-size: 0.7rem;
       position: relative;
       z-index: 1;
@@ -314,50 +325,120 @@
       line-height: 1.1;
     }
     .cert-img:hover {
-      transform: scale(1.8);
+      transform: scale(1.5);
       z-index: 10;
-      transition: transform 0.4s ease;
+      transition: transform 0.3s ease;
     }
     .cert-img {
-      transition: transform 0.3s ease;
+      transition: transform 0.2s ease;
     }
     /* ----------- MOBILE RESPONSIVE ----------- */
     @media (max-width: 900px) {
       main { max-width: 98vw; padding: 9px 2vw;}
-      .welcome-block { max-width: 99vw; padding: 20px 2vw;}
+      .welcome-block { max-width: 99vw; padding: 17px 2vw;}
       .cert-carousel-outer { max-width: 98vw; }
-      .proj-grid { grid-template-columns: 1fr; }
+      .proj-grid { grid-template-columns: 1fr;}
       .terminal-bar, .terminal-links { padding-left: 3vw; padding-right: 3vw; }
     }
     @media (max-width: 650px) {
-      header { padding: 24px 3vw 0 3vw; }
-      .welcome-block { padding: 10vw 2vw; }
-      .welcome-block h1 { font-size: 1.3rem; }
-      main { padding: 6vw 1vw;}
-      .cert-card { min-width: 80px; max-width: 99vw; min-height: 90px; }
-      .cert-img { max-width: 60vw; max-height: 40vw; }
+      header { padding: 18px 2vw 0 2vw; }
+      .welcome-block { padding: 8vw 2vw; border-radius: 6px;}
+      .welcome-block h1 { font-size: 1.15rem; }
+      main { padding: 4vw 1vw; border-radius: 7px;}
+      .cert-card { min-width: 70px; max-width: 97vw; min-height: 70px; border-radius: 6px;}
+      .cert-img { max-width: 43vw; max-height: 18vw; }
       .project-card img { max-width: 95vw; }
       h2 { font-size: 1rem; }
-      .terminal-bar { font-size: 0.94rem; gap: 5px; }
-      .terminal-links { gap: 7px; font-size: 0.93rem; }
-      .terminal-links a { min-width: 40vw; font-size: 0.95rem; padding: 5px 3vw;}
-      .skills-list { gap: 6px; }
-      .skill-badge { padding: 5px 10px; font-size: 0.8rem; border-radius: 6px; }
+      .terminal-bar { font-size: 0.93rem; gap: 3px; }
+      .terminal-links { gap: 6px; font-size: 0.91rem; }
+      .terminal-links a { min-width: 38vw; font-size: 0.92rem; padding: 4px 2vw;}
+      .skills-list { gap: 4px; }
+      .skill-badge { padding: 4px 8px; font-size: 0.75rem; border-radius: 5px; }
     }
     @media (max-width: 420px) {
-      .welcome-block { padding: 7vw 1vw; }
-      .welcome-block h1 { font-size: 1.01rem; }
-      main { padding: 3vw 1vw;}
-      .terminal-bar { font-size: 0.8rem; padding: 8px 2vw 4px 2vw;}
-      .terminal-links { font-size: 0.7rem; gap:3px; padding: 7px 2vw 2px 2vw; }
-      .terminal-links a { min-width: 78vw; padding: 3px 6px; font-size:0.87rem;}
-      .cert-title { font-size: 0.47rem; }
-      .cert-desc { font-size: 0.45rem; }
-      .project-card h3 { font-size: 0.7rem; }
-      .skills-list { gap: 3px; }
-      .skill-badge { padding: 2px 6px; font-size: 0.65rem; border-radius: 4px; }
-      h2 { font-size: 0.8rem; }
+      .welcome-block { padding: 5vw 1vw; border-radius: 4px;}
+      .welcome-block h1 { font-size: 0.82rem; }
+      main { padding: 2vw 1vw; border-radius: 4px;}
+      .terminal-bar { font-size: 0.78rem; padding: 7px 1vw 3px 1vw;}
+      .terminal-links { font-size: 0.63rem; gap:2px; padding: 5px 1vw 2px 1vw; }
+      .terminal-links a { min-width: 75vw; padding: 2px 4px; font-size:0.82rem;}
+      .cert-title { font-size: 0.43rem; }
+      .cert-desc { font-size: 0.39rem; }
+      .project-card h3 { font-size: 0.69rem; }
+      .skills-list { gap: 2px; }
+      .skill-badge { padding: 1.5px 4px; font-size: 0.59rem; border-radius: 3px; }
+      h2 { font-size: 0.7rem; }
+      .cert-img { max-width: 60vw; max-height: 15vw; }
     }
+    /* ----------- TOUCH OPTIMIZATION ----------- */
+    @media (pointer: coarse) {
+      .terminal-links a, .skill-badge, .carousel-arrow {
+        touch-action: manipulation;
+        user-select: none;
+      }
+      .cert-img:hover {
+        transform: none;
+      }
+    }
+    /* ----------- ACCESSIBILITY ----------- */
+    .d-none { display: none !important; }
+    .checkbox__label {
+      font-size: 0.95rem;
+      color: #ff80ff;
+      margin-left: 5px;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+    .checkbox__checkbox {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      border: 2px solid #ff80ff;
+      background: #111;
+      vertical-align: middle;
+      margin-right: 5px;
+      cursor: pointer;
+      position: relative;
+    }
+    #toggle-animation:checked + .checkbox__checkbox::after {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 12px;
+      background: #ff80ff;
+      position: absolute;
+      left: 4px;
+      top: 2px;
+      border-radius: 3px;
+    }
+    @media (max-width: 650px) {
+  #contact ul {
+    padding: 0;
+    margin: 0;
+  }
+  #contact ul li {
+    font-size: 0.8rem;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+    margin-bottom: 7px;
+  }
+  #contact a {
+    font-size: 0.85rem;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    display: inline-block;
+    max-width: 96vw;
+  }
+}
+@media (max-width: 420px) {
+  #contact ul li,
+  #contact a {
+    font-size: 0.63rem;
+    max-width: 99vw;
+  }
+}
   </style>
 </head>
 <body>
@@ -412,7 +493,7 @@
         width: 60vw;
         height: 40vw;
         max-width: 380px;
-        max-height: 250px;
+        max-height: 220px;
         margin: 0 auto;
         color: white;
         perspective: 1000px;
@@ -437,14 +518,14 @@
         width: 60vw;
         height: 40vw;
         max-width: 380px;
-        max-height: 250px;
+        max-height: 220px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         border-radius: 6px;
         transform-origin: center;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 4rem;
+        font-size: 3rem;
       }
       .icon-cards__item:nth-child(1) {
         background: #FDD94F;
@@ -470,8 +551,16 @@
         100%       { transform: translateZ(-35vw) rotateY(-360deg); }
       }
       @media screen and (min-width: 768px) {
+        .icon-cards {
+          width: 340px;
+          height: 180px;
+        }
         .icon-cards__content {
           transform: translateZ(-20vw) rotateY(0);
+        }
+        .icon-cards__item {
+          width: 340px;
+          height: 180px;
         }
         .icon-cards__item:nth-child(1) {
           transform: rotateY(0deg) translateZ(20vw);
@@ -493,6 +582,20 @@
           100%       { transform: translateZ(-20vw) rotateY(-360deg); }
         }
       }
+      @media (max-width: 650px) {
+        .icon-cards {
+          width: 90vw;
+          height: 45vw;
+          max-width: 99vw;
+          max-height: 33vw;
+        }
+        .icon-cards__item {
+          width: 90vw;
+          height: 45vw;
+          max-width: 99vw;
+          max-height: 33vw;
+        }
+      }
     </style>
     <section id="carrucel">
       <h2 style="text-align: center;">Certificaciones destacadas</h2>
@@ -500,29 +603,29 @@
         <figure class="icon-cards" style="margin: 0 auto;">
           <div class="icon-cards__content">
             <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
-              <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
-                <img src="certs/pythontotal.jpg" alt="Python Total" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
+              <div class="cert-card main" style="background: #18101b;">
+                <img src="certs/pythontotal.jpg" alt="Python Total" class="cert-img" style="max-width: 160px; max-height: 80px;">
                 <div class="cert-title">Python Total</div>
                 <div class="cert-desc">Curso Avanzado Python</div>
               </div>
             </div>
             <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
-              <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
-                <img src="certs/oraclecertificacion.jpg" alt="PLSQL ORACLE" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
+              <div class="cert-card main" style="background: #18101b;">
+                <img src="certs/oraclecertificacion.jpg" alt="PLSQL ORACLE" class="cert-img" style="max-width: 160px; max-height: 80px;">
                 <div class="cert-title">PLSQL ORACLE</div>
                 <div class="cert-desc">DB Programing SQL</div>
               </div>
             </div>
             <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
-              <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
-                <img src="certs/htmlcertificado.png" alt="HTML5" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
+              <div class="cert-card main" style="background: #18101b;">
+                <img src="certs/htmlcertificado.png" alt="HTML5" class="cert-img" style="max-width: 160px; max-height: 80px;">
                 <div class="cert-title">HTML5</div>
                 <div class="cert-desc">HTML5 y CSS Avanzado</div>
               </div>
             </div>
             <div class="icon-cards__item" style="background: transparent; box-shadow: none;">
-              <div style="display: flex; flex-direction: column; align-items: center; background: #18101b; padding: 10px; border: 4px double #ff80ff; box-shadow: 0 0 24px #ff80ff99; border-radius: 8px;">
-                <img src="certs/fullstack.jpg" alt="Fullstack" class="cert-img" style="max-width: 150px; max-height: 80px; border: 2px dashed #ff80ff; background: #222; border-radius: 4px;">
+              <div class="cert-card main" style="background: #18101b;">
+                <img src="certs/fullstack.jpg" alt="Fullstack" class="cert-img" style="max-width: 160px; max-height: 80px;">
                 <div class="cert-title">Fullstack</div>
                 <div class="cert-desc">Desarrollo Web Fullstack</div>
               </div>
@@ -530,6 +633,55 @@
           </div>
         </figure>
       </div>
+      <style>
+        /* Responsive adjustments for bigger cert cards */
+        .icon-cards__item .cert-card.main {
+          min-width: 200px;
+          max-width: 260px;
+          min-height: 140px;
+          padding: 18px 12px;
+        }
+        .icon-cards__item .cert-img {
+          max-width: 160px;
+          max-height: 80px;
+        }
+        @media (max-width: 900px) {
+          .icon-cards__item .cert-card.main {
+            min-width: 140px;
+            max-width: 180px;
+            min-height: 90px;
+            padding: 10px 6px;
+          }
+          .icon-cards__item .cert-img {
+            max-width: 100px;
+            max-height: 50px;
+          }
+        }
+        @media (max-width: 650px) {
+          .icon-cards__item .cert-card.main {
+            min-width: 90px;
+            max-width: 99vw;
+            min-height: 60px;
+            padding: 6px 2vw;
+          }
+          .icon-cards__item .cert-img {
+            max-width: 60vw;
+            max-height: 24vw;
+          }
+        }
+        @media (max-width: 420px) {
+          .icon-cards__item .cert-card.main {
+            min-width: 60px;
+            max-width: 99vw;
+            min-height: 40px;
+            padding: 3px 1vw;
+          }
+          .icon-cards__item .cert-img {
+            max-width: 80vw;
+            max-height: 18vw;
+          }
+        }
+      </style>
       <div class="checkbox" style="text-align: center;">
         <input class="d-none" id="toggle-animation" type="checkbox" checked />
         <label class="checkbox__checkbox" for="toggle-animation"></label>
@@ -554,7 +706,7 @@
         </article>
         <article class="project-card">
           <h3>CatFromPort</h3>
-          <img src="proyects/m5stick.png" alt="mish">
+          <img src="proyects/m5stick.png" alt="mish" style="max-width:300px; max-height:300px;">
           <p>Proyecto en idea y Desarrollo en hiatus: firmware inspirado en Bruce pero mejorado, pensado para cuando tenga más tiempo. Bruce tiene varias carencias que busco solucionar. Hecho con micropython</p>
           <a href="https://github.com/ogidok/CatFromPort" target="_blank">GitHub</a>
         </article>
@@ -620,7 +772,7 @@
       ctx.fillStyle = "rgba(0,0,0,0.6)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.font = fontSize + "px 'Press Start 2P', monospace";
-      ctx.fillStyle = "#ff80ff";
+      ctx.fillStyle = "#00ffd0";
       for (let i = 0; i < drops.length; i++) {
         const text = String.fromCharCode(0x2592 + Math.floor(Math.random() * 10));
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
