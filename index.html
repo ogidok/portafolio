@@ -128,7 +128,7 @@
       text-shadow: 0 0 4px #ff80ff88;
     }
     main {
-      max-width: 60%;
+      max-width: 65%;
       margin: 20px auto;
       background: rgba(0, 0, 0, 0.65);
       padding: 16px 12px;
@@ -445,8 +445,8 @@
   <canvas id="rain-canvas"></canvas>
   <div id="ascii-bg"></div>
   <header>
-    <h1>Welcome to Ogidok dev</h1>
-    <p>inspirado en la epoca dorada del internet </p>
+    <!-- <h1>Welcome to Ogidok dev</h1>
+    <p>inspirado en la epoca dorada del internet </p> -->
     <nav class="terminal-navbar" id="nav">
       <div class="terminal-bar">
         <span class="user-host"><span class="user">ogidok</span>@<span class="host">portfolio</span> <span class="dir">~</span></span>
@@ -465,7 +465,7 @@
   </header>
   <main>
     <section id="about">
-      <h2>Sobre mi</h2>
+      <h2>Sobre mi > Programando hace 5 años</h2>
       <p>Hola, soy <strong>Diego aka Ogidok</strong>, desarrollador fullstack formado en la Universidad INACAP y mayoritariamente autodidacta desde los 15. Me apasiona crear páginas web y mini proyectos por amor al arte. Usé Linux como sistema principal durante un año y aún lo manejo periódicamente, lo que me permitió aprender sobre ciberseguridad, scripting en bash y administración de sistemas. Disfruto explorar nuevas tecnologías y mejorar mis habilidades constantemente.</p>
     </section>
     <section id="skills">
@@ -485,6 +485,23 @@
         <span class="skill-badge">Android Studio</span>
         <span class="skill-badge">Git</span>
         <span class="skill-badge">GitHub</span>
+        <span class="skill-badge">PLSQL</span>
+        <span class="skill-badge">DOM</span>
+        <span class="skill-badge">BOM</span>
+        <span class="skill-badge">Pentesting</span>
+        <span class="skill-badge">Nmap</span>
+        <span class="skill-badge">Scraping Web</span>
+        <span class="skill-badge">Backend</span>
+        <span class="skill-badge">Frontend</span>
+        <span class="skill-badge">Windows Server</span>
+        <span class="skill-badge">Linux Server</span>
+        <span class="skill-badge">RHEL</span>
+        <span class="skill-badge">Flask</span>
+        <span class="skill-badge">React</span>
+        <span class="skill-badge">Kivy</span>
+        <span class="skill-badge">Pygame</span>
+        <span class="skill-badge">Google Colab</span>
+        <span class="skill-badge">Machine Learning</span>
       </div>
     </section>
     <style>
@@ -737,7 +754,7 @@
             <rect x="10" y="7" width="1" height="1" fill="#fff"/>
             <rect x="8" y="9" width="2" height="1" fill="#fff"/>
           </svg>
-        </span>1
+        </span>
         github.com/ogidok
       </a>
     </p>
@@ -772,7 +789,7 @@
       ctx.fillStyle = "rgba(0,0,0,0.6)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.font = fontSize + "px 'Press Start 2P', monospace";
-      ctx.fillStyle = "#00ffd0";
+      ctx.fillStyle = "#ff0000";
       for (let i = 0; i < drops.length; i++) {
         const text = String.fromCharCode(0x2592 + Math.floor(Math.random() * 10));
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
