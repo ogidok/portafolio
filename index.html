@@ -8,522 +8,303 @@
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="stylesheet" href="/css/lenguajes.css">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      
+      --terminal-accent: #ff80ff;
+      --terminal-border: #ff80ff88;
+      --terminal-badge-bg: #22162e;
+      --terminal-badge-border: #c77dff;
+      --terminal-badge-text: #f3e9fa;
+      --terminal-card-border: #ff80ff99;
+      
+    }
+
     body {
       font-family: 'Press Start 2P', monospace;
-      background: black;
-      color: white;
-      line-height: 1.4;
-      -webkit-tap-highlight-color: transparent;
-      scroll-behavior: smooth;
-    }
-    a { color: #ff80ff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    header {
-      text-align: center;
-      padding: 32px 8px 0 8px;
-      background: none;
-      border-bottom: none;
-      position: relative;
-      z-index: 1;
-    }
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      animation: glow 2s ease-in-out infinite alternate;
-      color: #fff;
-      text-shadow: 0 0 10px #ff80ff, 0 0 32px #ff80ff;
-      letter-spacing: 4px;
-    }
-    header p {
-      color: #fff;
-      font-size: 1.05rem;
-      margin-bottom: 14px;
-      text-shadow: 0 0 4px #ff80ff88;
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 12px #ff80ff; }
-      to   { text-shadow: 0 0 32px #ff80ff; }
-    }
-    .terminal-navbar {
-      border-bottom: none
-      font-family: 'Press Start 2P', monospace;
-      padding-bottom: 0;
-      margin-bottom: 0;
-      background: none;
-      box-shadow: none;
-    }
-    .terminal-bar {
-      padding: 14px 10px 8px 10px;
-      font-size: 1.08rem;
-      color: #b6fcd5;
-      letter-spacing: 2px;
-      border-bottom: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: none;
-      flex-wrap: wrap;
-    }
-    .user-host .user { color: #ff80ff; }
-    .user-host .host { color: #45f3ff; }
-    .user-host .dir { color: #f7ff7a; }
-    .dollar { color: #b6fcd5; font-weight: bold; margin-left: 8px; margin-right: 3px;}
-    .cmd { color: #f7ff7a; }
-    .terminal-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 8px 8px 8px 8px;
-      background: none;
-      border-bottom: none
-      border-top: none;
-      justify-content: center;
-    }
-    .terminal-links a {
-      color: #00ffd0;
-      background: none;
-      border: 2px solid #00ffd0;
-      border-radius: 4px;
-      padding: 4px 8px;
-      font-size: 1rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      margin-bottom: 4px;
-      transition: background 0.13s, color 0.13s, border 0.13s;
-      text-shadow: 0 0 3px #00ffd088;
-      display: inline-block;
-      text-align: center;
-      min-width: 100px;
-      word-break: break-word;
-    }
-    .terminal-links a:hover {
-      background: #00ffd0;
-      color: #18101b;
-      border-color: #ff80ff;
-      text-shadow: none;
-    }
-    .welcome-block {
-      max-width: 690px;
-      margin: 36px auto 0 auto;
-      background: rgba(0,0,0,0.75);
-      border: 3px solid #ff80ff;
-      box-shadow: 0 0 16px #ff80ff60, 0 2px 18px #18101b99;
-      border-radius: 8px;
-      text-align: center;
-      padding: 36px 10px 26px 10px;
-      position: relative;
-    }
-    .welcome-block h1 {
-      font-size: 2.2rem;
-      margin: 0 0 12px 0;
-      color: #fff;
-      text-shadow: 0 0 10px #ff80ff, 0 0 40px #ff80ff;
-      letter-spacing: 4px;
-      animation: glow 2s ease-in-out infinite alternate;
-    }
-    .welcome-block p {
-      color: #fff;
-      font-size: 1.05rem;
-      margin: 0;
-      text-shadow: 0 0 4px #ff80ff88;
+      background: #14101f;
+      color: #fafaff;
+      min-height: 100vh;
     }
     main {
-      max-width: 65%;
-      margin: 20px auto;
-      background: rgba(0, 0, 0, 0.65);
-      padding: 16px 12px;
-      border: 3px double #ff80ff;
-      position: relative;
-      z-index: 1;
-      border-radius: 10px;
+      max-width: 70%;
+      margin: 32px auto 32px auto;
+      border-radius: 12px;
+      background: var(--terminal-section-bg);
+      opacity: 1;
+      
+      border: 2px solid var(--terminal-border);
+      padding: 24px 3vw 40px 3vw;
     }
-    section { margin-bottom: 32px; }
-    h2 { font-size: 1.2rem; margin-bottom: 20px; border-bottom: 2px dashed #ff80ff; padding-bottom: 6px; }
+
+    header {
+      background: var(--terminal-bg);
+      border-bottom: 2px solid var(--terminal-border);
+      padding: 23px 0 16px 0;
+      border-radius: 12px 12px 0 0;
+      
+    }
+    header h1,
+    h2 {
+      color: var(--terminal-accent);
+      letter-spacing: 2px;
+      
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 1.15rem;
+      margin-top: 28px;
+      margin-bottom: 17px;
+      border-bottom: 1px dashed var(--terminal-accent);
+      padding-bottom: 4px;
+    }
+
+    /* ABOUT CARD NEOTECH */
+    .welcome-block, #about, .about-card {
+      background: var(--terminal-card-bg);
+      border: 2px solid var(--terminal-card-border);
+      border-radius: 9px;
+      
+      padding: 28px 18px 16px 18px;
+      margin-bottom: 26px;
+    }
+    #about pre {
+      text-align: left;
+      color: var(--terminal-accent);
+      margin-bottom: 0;
+      background: none;
+      font-size: 0.98em;
+      line-height: 1.2;
+    }
+    #about table {
+      margin-top: 0.6em;
+      font-size: 1rem;
+      color: #fafaff;
+    }
+    #about table td {
+      padding: 2px 7px 2px 0;
+      border: none;
+      background: none;
+      color: #fafaff;
+    }
+    #about table td:first-child {
+      color: var(--terminal-accent);
+    }
+
+    /* SKILLS BADGES - NUEVO */
     .skills-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
+      gap: 0px 0px;;
       justify-content: center;
+      margin: 18px 0 16px 0;
     }
     .skill-badge {
-      background: #111;
+      background: transparent;
       border: 2px dashed #ff80ff;
       color: #ff80ff;
-      padding: 7px 14px;
-      font-size: 0.85rem;
       border-radius: 7px;
+      padding: 7px 18px 7px 18px;
+      font-size: 1.12rem;
+      letter-spacing: 1.2px;
+      margin-bottom: 3px;
+      font-family: 'Press Start 2P', monospace;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      box-shadow: 0 2px 8px #0008;
-      margin-bottom: 4px;
-      transition: background 0.2s, color 0.2s;
+      box-shadow: none;
+      text-shadow: none;
+      transition: background 0.18s, color 0.18s, border 0.18s;
+      cursor: default;
     }
     .skill-badge:hover {
-      background: #ff80ff;
-      color: #111;
-    }
-    .cert-carousel-outer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto;
-      max-width: 700px;
-      min-height: 220px;
-      position: relative;
-      margin-bottom: 24px;
-    }
-    .carousel-arrow {
-      background: #111;
-      color: #ff80ff;
-      border: 2px solid #ff80ff;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      font-size: 1.5rem;
-      line-height: 36px;
-      cursor: pointer;
-      user-select: none;
-      margin: 0 8px;
-      transition: background 0.2s, color 0.2s;
-      z-index: 2;
-    }
-    .carousel-arrow:hover {
-      background: #ff80ff;
-      color: #111;
-    }
-    .cert-carousel-frame {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      gap: 18px;
-      position: relative;
-      overflow: hidden;
-      min-height: 120px;
-    }
-    .cert-cards-inner {
-      display: flex;
-      width: 100%;
-      transition: transform 0.55s cubic-bezier(0.6,0,0.4,1);
-    }
-    .cert-card {
-      background: #111;
-      border: 3px double #ff80ff;
-      box-shadow: 0 0 18px #ff80ff44;
-      padding: 10px 8px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 140px;
-      max-width: 210px;
-      min-height: 120px;
-      transition: transform 0.2s, opacity 0.2s, filter 0.13s;
-      opacity: 1;
-      margin: 0 7px;
-      border-radius: 10px;
-    }
-    .cert-card.main {
-      transform: scale(1.09);
-      z-index: 2;
-      opacity: 1;
-      border: 4px double #ff80ff;
-      box-shadow: 0 0 18px #ff80ff99;
-      background: #18101b;
-      filter: none;
-    }
-    .cert-card.side {
-      transform: scale(0.92);
-      opacity: 0.7;
-      filter: grayscale(0.7) blur(0.5px);
-      background: #1a1a23;
-      border: 2px dashed #ff80ff;
-      z-index: 1;
-    }
-    .cert-img {
-      max-width: 120px;
-      max-height: 60px;
-      margin-bottom: 7px;
-      border: 2px dashed #ff80ff;
-      background: #222;
-      display: block;
-      object-fit: contain;
-      border-radius: 4px;
-    }
-    .cert-title {
-      color: #ff80ff;
-      font-size: 0.74rem;
-      margin-bottom: 2px;
-      margin-top: 2px;
-      text-shadow: 0 0 6px #ff80ff88;
-      text-align: center;
-      word-break: break-word;
-    }
-    .cert-desc {
+      background: #ff80ff22;
       color: #fff;
-      font-size: 0.61rem;
-      text-align: center;
-      min-height: 20px;
-      word-break: break-word;
+      border-color: #fff;
     }
+
+    /* PROJECTS */
     .proj-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      gap: 18px;
     }
     .project-card {
-      background: #111;
-      padding: 11px;
-      border: 2px solid #ff80ff;
+      background: var(--terminal-card-bg);
+      border: 2px solid var(--terminal-card-border);
       border-radius: 8px;
-      box-shadow: 0 2px 12px #ff80ff22;
-      word-break: break-word;
+      padding: 13px 10px 13px 10px;
+      
     }
-    .project-card h3 { font-size: 1rem; margin-bottom: 8px; }
+    .project-card a{
+      color: #45f3ff;
+      text-shadow: 0 0 3px #fff, 0 0 1px #000;
+    }
+    .project-card h3 {
+      color: var(--terminal-accent);
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
     .project-card img {
       display: block;
-      margin: 0 auto 7px auto;
-      /* border: 1.5px solid #ff80ff; */
+      margin: 0 auto 9px auto;
       max-width: 100%;
-      width: 100%;
-      height: auto;
+      min-width: 200px;
       border-radius: 5px;
-      /* box-shadow: 0 2px 12px #0008; */
-      transition: transform 0.18s cubic-bezier(0.6,0,0.4,1);
-      /* background: #222; */
+      object-fit: contain;
+      transition: box-shadow 0.19s, transform 0.19s;
     }
     .project-card img:hover {
-      transform: scale(1.07);
-      box-shadow: 0 4px 24px #ff80ff77;
-      z-index: 2;
+      transform: scale(1.09);
+      box-shadow: 0 3px 18px var(--terminal-accent);
     }
-    footer {
-      text-align: center;
-      padding: 13px 7px;
-      background: rgba(0,0,0,0.7);
-      border-top: 3px dashed #ff80ff;
-      font-size: 0.7rem;
-      position: relative;
-      z-index: 1;
+
+    /* CERTIFICACIONES CARRUSEL */
+    .icon-cards {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      perspective: 1200px;
+      height: 200px;
+      margin-bottom: 40px;
     }
-    #ascii-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
+    .icon-cards__content {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 19px;
       width: 100%;
       height: 100%;
-      color: yellow;
-      background: black;
-      font-family: monospace;
-      white-space: pre;
-      padding: 10px;
-      z-index: 0;
-      overflow: hidden;
-      pointer-events: none;
-      opacity: 0.3;
-      font-size: 8px;
-      line-height: 1.1;
     }
-    .cert-img:hover {
-      transform: scale(1.5);
-      z-index: 10;
-      transition: transform 0.3s ease;
+    .icon-cards__item {
+      flex: 1 1 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 140px;
+      max-width: 210px;
+      transition: transform 0.3s, opacity 0.2s;
+    }
+    .cert-card.main {
+      background: #20102b;
+      border: 2.5px solid var(--terminal-accent);
+      border-radius: 9px;
+      box-shadow: 0 2px 14px #ff80ff33;
+      text-align: center;
+      padding: 18px 7px 12px 7px;
     }
     .cert-img {
-      transition: transform 0.2s ease;
+      max-width: 140px;
+      max-height: 70px;
+      margin-bottom: 8px;
+      border-radius: 4px;
+      box-shadow: 0 1px 6px #0005;
     }
-    /* ----------- MOBILE RESPONSIVE ----------- */
+    .cert-title {
+      color: var(--terminal-accent);
+      font-size: 0.93rem;
+      margin: 3px 0 2px 0;
+      font-weight: bold;
+    }
+    .cert-desc {
+      color: #fafaff;
+      font-size: 0.75rem;
+      margin-bottom: 0;
+    }
+
+    /* Contact */
+    #contact ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    #contact li {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+    #contact a {
+      color: #96f9ff;
+      word-break: break-all;
+      text-decoration: underline dashed 1.5px var(--terminal-accent);
+    }
+    #contact a:hover { color: var(--terminal-accent); }
+
+    /* Footer */
+    footer {
+      background: var(--terminal-bg);
+      color: #efcfff;
+      border-top: 2px solid var(--terminal-border);
+      padding: 15px 0 22px 0;
+      text-align: center;
+      border-radius: 0 0 12px 12px;
+      font-size: 0.88rem;
+    }
+
+    /* SCROLL BUTTON */
+    #scrollToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--terminal-accent);
+      border: none;
+      color: #18101b;
+      
+      font-size: 2.4rem;
+     
+      cursor: pointer;
+      z-index: 999;
+      padding: 7px 14px;
+      transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+    }
+    #scrollToTopBtn:hover {
+      background: #fff;
+      color: var(--terminal-accent);
+      
+    }
+
+    /* MOBILE & RESPONSIVE */
     @media (max-width: 900px) {
-      main { max-width: 98vw; padding: 9px 2vw;}
-      .welcome-block { max-width: 99vw; padding: 17px 2vw;}
-      .cert-carousel-outer { max-width: 98vw; }
-      .proj-grid { grid-template-columns: 1fr;}
-      .terminal-bar, .terminal-links { padding-left: 3vw; padding-right: 3vw; }
+      main { max-width: 99vw; }
+      .proj-grid { grid-template-columns: 1fr; gap: 15px; }
+      .icon-cards { height: 160px; }
     }
     @media (max-width: 650px) {
-      header { padding: 18px 2vw 0 2vw; }
-      .welcome-block { padding: 8vw 2vw; border-radius: 6px;}
-      .welcome-block h1 { font-size: 1.15rem; }
-      main { padding: 4vw 1vw; border-radius: 7px;}
-      .cert-card { min-width: 70px; max-width: 97vw; min-height: 70px; border-radius: 6px;}
-      .cert-img { max-width: 43vw; max-height: 18vw; }
-      .project-card img { max-width: 95vw; }
-      h2 { font-size: 1rem; }
-      .terminal-bar { font-size: 0.93rem; gap: 3px; }
-      .terminal-links { gap: 6px; font-size: 0.91rem; }
-      .terminal-links a { min-width: 38vw; font-size: 0.92rem; padding: 4px 2vw;}
-      .skills-list { gap: 4px; }
-      .skill-badge { padding: 4px 8px; font-size: 0.75rem; border-radius: 5px; }
+      main { padding: 2vw 1vw 6vw 1vw; border-radius: 10px;}
+      header { border-radius: 10px 10px 0 0; }
+      footer { border-radius: 0 0 10px 10px; }
+      .welcome-block, #about { padding: 15px 4vw 8px 4vw;}
+      .skills-list { gap: 0px 0px; }
+      .skill-badge { font-size: 0.8rem; padding: 6px 10px;}
+      .icon-cards { height: 110px; }
+      .cert-card.main { padding: 9px 2vw 7px 2vw;}
+      .cert-img { max-width: 90px; max-height: 45px;}
+      .cert-title { font-size: 0.74rem;}
+      .cert-desc { font-size: 0.59rem;}
+      .project-card h3 { font-size: 0.95rem;}
+      .project-card { padding: 7px 3vw 7px 3vw;}
+      #scrollToTopBtn { bottom: 11px; right: 11px; font-size: 1.4rem;}
+      #about table td { font-size: 0.84rem;}
+      #contact li { font-size: 0.82rem;}
     }
     @media (max-width: 420px) {
-      .welcome-block { padding: 5vw 1vw; border-radius: 4px;}
-      .welcome-block h1 { font-size: 0.82rem; }
-      main { padding: 2vw 1vw; border-radius: 4px;}
-      .terminal-bar { font-size: 0.78rem; padding: 7px 1vw 3px 1vw;}
-      .terminal-links { font-size: 0.63rem; gap:2px; padding: 5px 1vw 2px 1vw; }
-      .terminal-links a { min-width: 75vw; padding: 2px 4px; font-size:0.82rem;}
-      .cert-title { font-size: 0.43rem; }
-      .cert-desc { font-size: 0.39rem; }
-      .project-card h3 { font-size: 0.69rem; }
-      .skills-list { gap: 2px; }
-      .skill-badge { padding: 1.5px 4px; font-size: 0.59rem; border-radius: 3px; }
-      h2 { font-size: 0.7rem; }
-      .cert-img { max-width: 60vw; max-height: 15vw; }
+      main, .welcome-block, #about, footer, header { border-radius: 5px;}
+      .skill-badge { font-size: 0.65rem; padding: 4px 6px;}
+      h2 { font-size: 0.85rem;}
+      .icon-cards { height: 65px;}
+      .cert-card.main { padding: 3px 1vw 3px 1vw;}
+      .cert-img { max-width: 50px; max-height: 26px;}
+      .cert-title { font-size: 0.5rem;}
+      .cert-desc { font-size: 0.43rem;}
+      .project-card { font-size: 0.82rem;}
     }
-    /* ----------- TOUCH OPTIMIZATION ----------- */
-    @media (pointer: coarse) {
-      .terminal-links a, .skill-badge, .carousel-arrow {
-        touch-action: manipulation;
-        user-select: none;
-      }
-      .cert-img:hover {
-        transform: none;
-      }
-    }
-    /* ----------- ACCESSIBILITY ----------- */
-    .d-none { display: none !important; }
-    .checkbox__label {
-      font-size: 0.95rem;
-      color: #ff80ff;
-      margin-left: 5px;
-      cursor: pointer;
-      vertical-align: middle;
-    }
-    .checkbox__checkbox {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      border-radius: 4px;
-      border: 2px solid #ff80ff;
-      background: #111;
-      vertical-align: middle;
-      margin-right: 5px;
-      cursor: pointer;
-      position: relative;
-    }
-    #toggle-animation:checked + .checkbox__checkbox::after {
-      content: "";
+
+    /* Opcional: Mejora las líneas divisorias */
+    hr, .skills-list:before, .skills-list:after, h2:after {
+      content: '';
       display: block;
-      width: 12px;
-      height: 12px;
-      background: #ff80ff;
-      position: absolute;
-      left: 4px;
-      top: 2px;
-      border-radius: 3px;
+      border: none;
+      border-bottom: 1px dashed var(--terminal-accent);
+      margin: 16px 0 0 0;
+      opacity: 0.48;
     }
-    @media (max-width: 650px) {
-  #contact ul {
-    padding: 0;
-    margin: 0;
-  }
-  #contact ul li {
-    font-size: 0.8rem;
-    word-break: break-all;
-    overflow-wrap: anywhere;
-    line-height: 1.5;
-    margin-bottom: 7px;
-  }
-  #contact a {
-    font-size: 0.85rem;
-    word-break: break-all;
-    overflow-wrap: anywhere;
-    display: inline-block;
-    max-width: 96vw;
-  }
-}
-@media (max-width: 420px) {
-  #contact ul li,
-  #contact a {
-    font-size: 0.63rem;
-    max-width: 99vw;
-  }
-}
-@media (max-width: 650px) {
-  #about {
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 0 !important;
-  }
-  #about > div:first-child {
-    flex-direction: column !important;
-    min-width: unset !important;
-    min-height: unset !important;
-    padding-right: 0 !important;
-    margin: 0 auto !important;
-  }
-  #about pre {
-    font-size: 0.6em !important;
-    text-align: center;
-    padding: 0 !important;
-  }
-  #about table {
-    font-size: 0.83rem !important;
-  }
-  #about .color-palette {
-    justify-content: center;
-    margin-top: 6px;
-  }
-}
-#about-flex {
-  display: flex;
-  align-items: flex-start;
-}
-@media (max-width: 650px) {
-  #about-flex {
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-}
-@media (min-width: 900px) {
-  #about table {
-    font-size: 1.8rem !important;
-  }
-  #about .color-palette span {
-    width: 36px !important;
-    height: 36px !important;
-  }
-}
-#scrollToTopBtn {
-  display: none;
-  position: fixed;
-  bottom: 36px;
-  right: 36px;
-  z-index: 99;
-  background: none;
-  border: none;
-  color: #ff80ff;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 3.5rem;
-  line-height: 1;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-  filter: drop-shadow(0 0 9px #ff80ff88);
-  transition: color 0.15s, filter 0.15s, transform 0.14s;
-  outline: none;
-}
-#scrollToTopBtn:hover,
-#scrollToTopBtn:focus {
-  color: #fff;
-  filter: drop-shadow(0 0 16px #fff);
-  transform: scale(1.13);
-}
-@media (max-width: 650px) {
-  #scrollToTopBtn {
-    bottom: 12px;
-    right: 10px;
-    font-size: 2.2rem;
-  }
-}
-@media (max-width: 420px) {
-  #scrollToTopBtn {
-    font-size: 1.29rem;
-    bottom: 5px;
-    right: 5px;
-  }
-}
   </style>
 </head>
 <body>
@@ -532,39 +313,38 @@
     <polyline points="8,20 16,10 24,20" fill="none" stroke="#ff80ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
 </button>
-  <canvas id="rain-canvas"></canvas>
-  <div id="ascii-bg"></div>
+  <canvas id="rain-canvas" style="background: none !important;"></canvas>
+  <div id="ascii-bg" style="background: none !important;"></div>
   <header>
     <!-- <h1>Welcome to Ogidok dev</h1>
     <p>inspirado en la epoca dorada del internet </p> -->
     <nav class="terminal-navbar" id="nav">
       <div class="terminal-bar">
-        <a href="#nav">./about</a>
-        <a href="#skills">./skills</a>
-        <a href="#skills">./certificaciones</a>
-        <a href="#projects">./projects</a>
-        <a href="#contact">./contact</a>
-        
+      <a href="#nav" style="color:#45f3ff;">./about</a>
+      <a href="#about" style="color:#45f3ff;">./skills</a>
+      <a href="#skills" style="color:#45f3ff;">./certificaciones</a>
+      <a href="#projects" style="color:#45f3ff;">./projects</a>
+      <a href="#contact" style="color:#45f3ff;">./contact</a>
       </div>
-      <div class="terminal-bar">
-        <span style="display:inline-block; vertical-align:middle; margin-left:8px; color: white;">
-          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="display:inline-block; vertical-align:middle; fill:currentColor;">
-            <title>Linux</title>
-            <path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74zM22.898 21.36v-.623h-.234v-.084h.562v.084h-.234v.623h.331v-.707h.142l.167.5.034.107a2.26 2.26 0 01.038-.114l.17-.493H24v.707h-.091v-.593l-.206.593h-.084l-.205-.602v.602h-.091"></path>
-             
-          </svg>
-        </span>
-        <span class="user-host"><span class="user">ogidok</span>@<span class="host">portafolio</span> <span class="dir">~</span></span>
-        <span class="dollar">$</span>
-        <span class="cmd">neofetch</span>
-        
-        
-      </div>
-      
     </nav>
   </header>
   <main>
-    <section id="about" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px;">
+    <div class="terminal-bar" style="font-family: 'Press Start 2P', monospace; font-size: 1.25rem; color: #fafaff; display: flex; align-items: center; gap: 10px; margin-bottom: 22px;">
+      <span style="display:inline-block; vertical-align:middle; color: white;">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="display:inline-block; vertical-align:middle; fill:currentColor;">
+          <title>Linux</title>
+          <path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74zM22.898 21.36v-.623h-.234v-.084h.562v.084h-.234v.623h.331v-.707h.142l.167.5.034.107a2.26 2.26 0 01.038-.114l.17-.493H24v.707h-.091v-.593l-.206.593h-.084l-.205-.602v.602h-.091"></path>
+        </svg>
+      </span>
+      <span class="user-host">
+        <span class="user" style="color:#fff; font-weight:bold; text-shadow:0 0 3px #fff;">ogidok</span>
+        <span style="color:#ff80ff;">@</span>
+        <span class="host" style="color:#45f3ff;">portafolio</span>
+        <span class="dir" style="color:#f7ff7a;"> ~ </span>
+      </span>
+      <span class="dollar" style="color:#b6fcd5; font-weight:bold;">$</span>
+      <span class="cmd" style="color:#fff; font-weight:bold;">neofetch</span>
+    </div>
       <div style="color:#ff80ff; font-family:monospace; font-size:0.85rem; line-height:1.1; background:none; margin:0; padding:0 10px 0 0; user-select:text; display:flex; align-items:flex-start; min-width:220px; min-height:120px;">
       <pre style="margin:0; color:#ff80ff; background:none; font-family:monospace; font-size:1.05em; line-height:1.1; user-select:text;">
                    -`
@@ -592,11 +372,11 @@
         <table style="font-family:monospace; color:#fff; font-size:0.98rem; background:none;">
           <tr>
         <td style="color:#ff80ff;">Usuario</td>
-        <td>: Diego (Ogidok)</td>
+        <td>: Ogidok (Diego)</td>
           </tr>
           <tr>
         <td style="color:#ff80ff;">Rol</td>
-        <td>: Fullstack Dev</td>
+        <td>: Analista Programador/Fullstack</td>
           </tr>
           <tr>
         <td style="color:#ff80ff;">Experiencia</td>
@@ -613,7 +393,7 @@
 
         
         <td style="color:#ff80ff;">Freelance</td>
-        <td>: Sí</td>
+        <td>: True</td>
           </tr>
         </table>
         <div style="margin-top:8px; display:flex; gap:2px; flex-wrap:wrap;"></div>
@@ -964,7 +744,7 @@
     canvas.style.height = "100vh";
     canvas.style.zIndex = 0;
     canvas.style.pointerEvents = "none";
-    canvas.style.opacity = 0.5;
+    canvas.style.opacity = 0.25;
     function resizeCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -981,7 +761,7 @@
     window.addEventListener('resize', setupRain);
     function drawRain() {
       ctx.fillStyle = "rgba(0,0,0,0.6)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.font = fontSize + "px 'Press Start 2P', monospace";
       ctx.fillStyle = "#ff0000";
       for (let i = 0; i < drops.length; i++) {
