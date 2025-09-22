@@ -46,7 +46,7 @@
       to   { text-shadow: 0 0 32px #ff80ff; }
     }
     .terminal-navbar {
-      border-bottom: 2px solid #00ffd0;
+      border-bottom: none
       font-family: 'Press Start 2P', monospace;
       padding-bottom: 0;
       margin-bottom: 0;
@@ -76,7 +76,7 @@
       gap: 12px;
       padding: 8px 8px 8px 8px;
       background: none;
-      border-bottom: 3px dashed #00ffd0;
+      border-bottom: none
       border-top: none;
       justify-content: center;
     }
@@ -449,11 +449,6 @@
     <!-- <h1>Welcome to Ogidok dev</h1>
     <p>inspirado en la epoca dorada del internet </p> -->
     <nav class="terminal-navbar" id="nav">
-      <div class="terminal-bar">
-        <span class="user-host"><span class="user">ogidok</span>@<span class="host">portafolio</span> <span class="dir">~</span></span>
-        <span class="dollar">$</span>
-        <span class="cmd">ls</span>
-      </div>
       <div class="terminal-links">
         <a href="#nav">./about</a>
         <a href="#about">./skills</a>
@@ -462,32 +457,97 @@
         <a href="#projects">./contact</a>
         <a href="https://github.com/ogidok" target="_blank">github.com/ogidok</a>
       </div>
+      <div class="terminal-bar">
+        <span style="display:inline-block; vertical-align:middle; margin-left:8px; color: white;">
+          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="display:inline-block; vertical-align:middle; fill:currentColor;">
+            <title>Linux</title>
+            <path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74zM22.898 21.36v-.623h-.234v-.084h.562v.084h-.234v.623h.331v-.707h.142l.167.5.034.107a2.26 2.26 0 01.038-.114l.17-.493H24v.707h-.091v-.593l-.206.593h-.084l-.205-.602v.602h-.091"></path>
+             
+          </svg>
+        </span>
+        <span class="user-host"><span class="user">ogidok</span>@<span class="host">portafolio</span> <span class="dir">~</span></span>
+        <span class="dollar">$</span>
+        <span class="cmd">neofetch</span>
+        
+        
+      </div>
+      
     </nav>
   </header>
   <main>
-    <section id="about">
-      <h2>Sobre mi &gt; Programando hace 5 años</h2>
-      <p>Hola, soy <strong>Diego aka Ogidok</strong>, desarrollador fullstack formado en la Universidad INACAP y mayoritariamente autodidacta desde los 15. Me apasiona crear páginas web y mini proyectos por amor al arte. Actualmente trabajo como freelance, pero busco una oportunidad en alguna empresa del área. Durante un tiempo usé Linux como sistema principal, lo cual me fascinó y me sirvió para aprender sobre ciberseguridad, scripting en bash y administración de sistemas. Disfruto explorar nuevas tecnologías y mejorar mis habilidades constantemente.</p>
-    </section>
-    <!-- <section id="languages">
-      <h2>Lenguajes de Programación</h2>
-      <div class="languages-carousel-wrapper">
-      <button class="carousel-btn left">&#9664;</button>
-      <div class="languages-carousel">
-        <div class="carousel-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-plain.svg" alt="Python" class="language-icon" />
-        </div>
-        <div class="carousel-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" class="language-icon" style="width:60px; height:60px;" />
-        </div>
-        <div class="carousel-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" alt="JavaScript" class="language-icon" />
+    <section id="about" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px;">
+      <div style="color:#ff80ff; font-family:monospace; font-size:0.85rem; line-height:1.1; background:none; margin:0; padding:0 10px 0 0; user-select:text; display:flex; align-items:center; min-width:220px; min-height:120px;">
+      <pre style="margin:0; color:#ff80ff; background:none; font-family:monospace; font-size:1.05em; line-height:1.1; user-select:text;">
+                   -`
+                  .o+`
+                 `ooo/
+                `+oooo:
+               `+oooooo:
+               -+oooooo+:
+             `/:-:++oooo+:
+            `/++++/+++++++:
+           `/++++++++++++++:
+          `/+++ooooooooooooo/`
+         ./ooosssso++osssssso+`
+        .oossssso-````/ossssss+`
+       -osssssso.      :ssssssso.
+      :osssssss/        osssso+++.
+     /ossssssss/        +ssssooo/- 
+   `/ossssso+/:-        -:/+osssso+-
+  `+sso+:-`                 `.-/+oso:
+ `++:.                           `-/+/
+ .`                                 `
+      </pre>
+      <div style="flex:1; min-width:220px; margin-left:8px;">
+        
+        <table style="font-family:monospace; color:#fff; font-size:0.98rem; background:none;">
+          <tr>
+        <td style="color:#ff80ff;">Usuario</td>
+        <td>: Diego (Ogidok)</td>
+          </tr>
+          <tr>
+        <td style="color:#ff80ff;">Rol</td>
+        <td>: Fullstack Dev</td>
+          </tr>
+          <tr>
+        <td style="color:#ff80ff;">Experiencia</td>
+        <td>: 5 años</td>
+          </tr>
+          <tr>
+        <td style="color:#ff80ff;">Formación</td>
+        <td>: INACAP / Autodidacta</td>
+          </tr>
+          <tr>
+        <td style="color:#ff80ff;">OS favorito</td>
+        <td>: Linux</td>
+          </tr>
+
+        
+        <td style="color:#ff80ff;">Freelance</td>
+        <td>: Sí</td>
+          </tr>
+        </table>
+        <div style="margin-top:8px; display:flex; gap:2px; flex-wrap:wrap;"></div>
+          <span style="display:inline-block; width:18px; height:18px; background:#ff5555;"></span>
+          <span style="display:inline-block; width:18px; height:18px; background:#f1fa8c;"></span>
+          <span style="display:inline-block; width:18px; height:18px; background:#50fa7b;"></span>
+          <span style="display:inline-block; width:18px; height:18px; background:#8be9fd;"></span>
+          <span style="display:inline-block; width:18px; height:18px; background:#bd93f9;"></span>
+          <span style="display:inline-block; width:18px; height:18px; background:#ff79c6;"></span>
+          <span style="display:inline-block; width:18px; height:18px; background:#bbbbbb;"></span>
+          <span style="display:inline-block; width:18px; height:18px; background:#282a36; border:1px solid #444;"></span>
         </div>
         
       </div>
-      <button class="carousel-btn right">&#9654;</button>
-      </div>
-    </section> -->
+      <div style="width:100%; margin-top:14px;">
+          <p style="color:#b6fcd5;">
+            Apasionado por crear páginas web y mini proyectos por amor al arte.<br>
+            Disfruto explorar nuevas tecnologías, scripting y ciberseguridad.<br>
+            Siempre aprendiendo y mejorando mis habilidades.
+          </p>
+        </div>
+    </section></div>
+    
     <section id="skills"></section>
       <h2>Skills</h2>
       <div class="skills-list">
@@ -772,11 +832,11 @@
       </article>
       </div>
     </section>
-    <section id="contact">
+    <section id="contact" style="list-style: none;">
       <h2>Encuéntrame en la web</h2>
-      <ul>
-        <li>Email: <a >diegomesinaes@gmail.com</a></li>
-        <li>GitHub: <a href="https://github.com/ogidok" target="_blank">https://github.com/ogidok</a></li>
+      <ul style="list-style: none; padding-left: 0;">
+      <li>Email: <a>diegomesinaes@gmail.com</a></li>
+      <li>GitHub: <a href="https://github.com/ogidok" target="_blank">https://github.com/ogidok</a></li>
       </ul>
     </section>
   </main>
