@@ -440,22 +440,68 @@
     max-width: 99vw;
   }
 }
+@media (max-width: 650px) {
+  #about {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0 !important;
+  }
+  #about > div:first-child {
+    flex-direction: column !important;
+    min-width: unset !important;
+    min-height: unset !important;
+    padding-right: 0 !important;
+    margin: 0 auto !important;
+  }
+  #about pre {
+    font-size: 0.6em !important;
+    text-align: center;
+    padding: 0 !important;
+  }
+  #about table {
+    font-size: 0.83rem !important;
+  }
+  #about .color-palette {
+    justify-content: center;
+    margin-top: 6px;
+  }
+}
+#about-flex {
+  display: flex;
+  align-items: flex-start;
+}
+@media (max-width: 650px) {
+  #about-flex {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}
+@media (min-width: 900px) {
+  #about table {
+    font-size: 1.8rem !important;
+  }
+  #about .color-palette span {
+    width: 36px !important;
+    height: 36px !important;
+  }
+}
   </style>
 </head>
 <body>
+  
   <canvas id="rain-canvas"></canvas>
   <div id="ascii-bg"></div>
   <header>
     <!-- <h1>Welcome to Ogidok dev</h1>
     <p>inspirado en la epoca dorada del internet </p> -->
     <nav class="terminal-navbar" id="nav">
-      <div class="terminal-links">
+      <div class="terminal-bar">
         <a href="#nav">./about</a>
-        <a href="#about">./skills</a>
+        <a href="#skills">./skills</a>
         <a href="#skills">./certificaciones</a>
-        <a href="#carrucel">./projects</a>
-        <a href="#projects">./contact</a>
-        <a href="https://github.com/ogidok" target="_blank">github.com/ogidok</a>
+        <a href="#projects">./projects</a>
+        <a href="#contact">./contact</a>
+        
       </div>
       <div class="terminal-bar">
         <span style="display:inline-block; vertical-align:middle; margin-left:8px; color: white;">
@@ -476,7 +522,7 @@
   </header>
   <main>
     <section id="about" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px;">
-      <div style="color:#ff80ff; font-family:monospace; font-size:0.85rem; line-height:1.1; background:none; margin:0; padding:0 10px 0 0; user-select:text; display:flex; align-items:center; min-width:220px; min-height:120px;">
+      <div style="color:#ff80ff; font-family:monospace; font-size:0.85rem; line-height:1.1; background:none; margin:0; padding:0 10px 0 0; user-select:text; display:flex; align-items:flex-start; min-width:220px; min-height:120px;">
       <pre style="margin:0; color:#ff80ff; background:none; font-family:monospace; font-size:1.05em; line-height:1.1; user-select:text;">
                    -`
                   .o+`
@@ -498,7 +544,7 @@
  `++:.                           `-/+/
  .`                                 `
       </pre>
-      <div style="flex:1; min-width:220px; margin-left:8px;">
+      <div style="flex:1; min-width:220px; margin-left:50px; margin-top: 2.5em;">
         
         <table style="font-family:monospace; color:#fff; font-size:0.98rem; background:none;">
           <tr>
@@ -515,7 +561,7 @@
           </tr>
           <tr>
         <td style="color:#ff80ff;">Formación</td>
-        <td>: INACAP / Autodidacta</td>
+        <td>: Universidad / Autodidacta</td>
           </tr>
           <tr>
         <td style="color:#ff80ff;">OS favorito</td>
@@ -541,9 +587,9 @@
       </div>
       <div style="width:100%; margin-top:14px;">
           <p style="color:#b6fcd5;">
-            Apasionado por crear páginas web y mini proyectos por amor al arte.<br>
-            Disfruto explorar nuevas tecnologías, scripting y ciberseguridad.<br>
-            Siempre aprendiendo y mejorando mis habilidades.
+            Entusiasta del desarrollo web y la creación de proyectos innovadores.<br>
+            Me motiva explorar nuevas tecnologías, automatizar tareas y aprender sobre ciberseguridad.<br>
+            Siempre en busca de nuevos desafíos para seguir creciendo y perfeccionando mis habilidades.
           </p>
         </div>
     </section></div>
@@ -875,7 +921,7 @@
     canvas.style.height = "100vh";
     canvas.style.zIndex = 0;
     canvas.style.pointerEvents = "none";
-    canvas.style.opacity = 0.25;
+    canvas.style.opacity = 0.5;
     function resizeCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
