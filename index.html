@@ -485,10 +485,53 @@
     height: 36px !important;
   }
 }
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 36px;
+  right: 36px;
+  z-index: 99;
+  background: none;
+  border: none;
+  color: #ff80ff;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 3.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  filter: drop-shadow(0 0 9px #ff80ff88);
+  transition: color 0.15s, filter 0.15s, transform 0.14s;
+  outline: none;
+}
+#scrollToTopBtn:hover,
+#scrollToTopBtn:focus {
+  color: #fff;
+  filter: drop-shadow(0 0 16px #fff);
+  transform: scale(1.13);
+}
+@media (max-width: 650px) {
+  #scrollToTopBtn {
+    bottom: 12px;
+    right: 10px;
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 420px) {
+  #scrollToTopBtn {
+    font-size: 1.29rem;
+    bottom: 5px;
+    right: 5px;
+  }
+}
   </style>
 </head>
 <body>
-  
+<button id="scrollToTopBtn" title="Subir" aria-label="Subir" tabindex="0" style="font-size:2.2rem; background:none; border:none;">
+  <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" focusable="false" style="vertical-align:middle;">
+    <polyline points="8,20 16,10 24,20" fill="none" stroke="#ff80ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
   <canvas id="rain-canvas"></canvas>
   <div id="ascii-bg"></div>
   <header>
@@ -958,6 +1001,20 @@
       el.classList.toggle('step-animation');
     }
     document.querySelector('#toggle-animation').addEventListener('click', classToggle);
+  </script>
+  <script>
+    // Botón subir arriba
+    const scrollBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', function() {
+      if (document.body.scrollTop > 260 || document.documentElement.scrollTop > 260) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    });
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
 </body>
 </html>
