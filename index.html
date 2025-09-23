@@ -306,6 +306,31 @@
       margin: 16px 0 0 0;
       opacity: 0.48;
     }
+  @media (max-width: 650px) {
+  .ascii-art {
+    display: none !important;
+  }
+}
+@media (max-width: 650px) {
+  .terminal-navbar .terminal-bar {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1rem;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .terminal-navbar .terminal-bar a {
+    display: block;
+    width: 100%;
+    word-break: break-word;
+    font-size: 1rem;
+    padding: 4px 0;
+    text-align: left;
+    box-sizing: border-box;
+  }
+}
   </style>
 </head>
 <body>
@@ -330,7 +355,7 @@
     </nav>
   </header>
   <main>
-    <div class="terminal-bar" style="font-family: 'Press Start 2P', monospace; font-size: 1.25rem; color: #fafaff; display: flex; align-items: center; gap: 10px; margin-bottom: 22px;">
+    <div class="terminal-bar" style="font-family: 'Press Start 2P', monospace; font-size: 1.25rem; color: #fafaff; display: flex; align-items: center; gap: 10px; margin-bottom: 22px; flex-wrap: wrap;">
       <span style="display:inline-block; vertical-align:middle; color: white;">
         <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="display:inline-block; vertical-align:middle; fill:currentColor;">
           <title>Linux</title>
@@ -347,7 +372,7 @@
       <span class="cmd" style="color:#fff; font-weight:bold;">neofetch</span>
     </div>
       <div style="color:#ff80ff; font-family:monospace; font-size:0.85rem; line-height:1.1; background:none; margin:0; padding:0 10px 0 0; user-select:text; display:flex; align-items:flex-start; min-width:220px; min-height:120px;">
-      <pre style="margin:0; color:#ff80ff; background:none; font-family:monospace; font-size:1.05em; line-height:1.1; user-select:text;">
+      <pre class="ascii-art" style="margin:0; color:#ff80ff; background:none; font-family:monospace; font-size:1.05em; line-height:1.1; user-select:text;">
                    -`
                   .o+`
                  `ooo/
