@@ -9,14 +9,12 @@
   <link rel="stylesheet" href="/css/lenguajes.css">
   <style>
     :root {
-      
       --terminal-accent: #ff80ff;
       --terminal-border: #ff80ff88;
       --terminal-badge-bg: #22162e;
       --terminal-badge-border: #c77dff;
       --terminal-badge-text: #f3e9fa;
       --terminal-card-border: #ff80ff99;
-      
     }
 
     body {
@@ -31,7 +29,6 @@
       border-radius: 12px;
       background: var(--terminal-section-bg);
       opacity: 1;
-      
       border: 2px solid var(--terminal-border);
       padding: 24px 3vw 40px 3vw;
     }
@@ -41,13 +38,11 @@
       border-bottom: 2px solid var(--terminal-border);
       padding: 23px 0 16px 0;
       border-radius: 12px 12px 0 0;
-      
     }
     header h1,
     h2 {
       color: var(--terminal-accent);
       letter-spacing: 2px;
-      
       margin-bottom: 8px;
     }
     h2 {
@@ -63,7 +58,6 @@
       background: var(--terminal-card-bg);
       border: 2px solid var(--terminal-card-border);
       border-radius: 9px;
-      
       padding: 28px 18px 16px 18px;
       margin-bottom: 26px;
     }
@@ -92,7 +86,6 @@
 
     /* SKILLS BADGES - NUEVO */
     .skills-list {
-
       display: flex;
       flex-wrap: wrap;
       gap: 8px 8px;
@@ -132,7 +125,6 @@
       border: 2px solid var(--terminal-card-border);
       border-radius: 8px;
       padding: 13px 10px 13px 10px;
-      
     }
     .project-card a{
       color: #45f3ff;
@@ -247,9 +239,7 @@
       background: var(--terminal-accent);
       border: none;
       color: #18101b;
-      
       font-size: 2.4rem;
-     
       cursor: pointer;
       z-index: 999;
       padding: 7px 14px;
@@ -258,7 +248,6 @@
     #scrollToTopBtn:hover {
       background: #fff;
       color: var(--terminal-accent);
-      
     }
 
     /* MOBILE & RESPONSIVE */
@@ -297,6 +286,61 @@
       .project-card { font-size: 0.82rem;}
     }
 
+    /* Responsive terminal bar adjustment */
+    .terminal-bar {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 1.25rem;
+      color: #fafaff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+      min-width: 0;
+      /* New for wrap and shrink */
+    }
+    @media (max-width: 650px) {
+      .terminal-bar {
+        font-size: 0.5rem !important;
+        gap: 4px !important;
+        margin-bottom: 12px !important;
+      }
+      .terminal-bar .user,
+      .terminal-bar .user-host,
+      .terminal-bar .host,
+      .terminal-bar .dir,
+      .terminal-bar .dollar,
+      .terminal-bar .cmd {
+        font-size: 1em !important;
+        white-space: nowrap;
+      }
+      .terminal-bar svg {
+        width: 18px !important;
+        height: 18px !important;
+        min-width: 18px;
+        min-height: 18px;
+      }
+    }
+    @media (max-width: 420px) {
+      .terminal-bar {
+        font-size: 0.72rem !important;
+        gap: 2px !important;
+        margin-bottom: 8px !important;
+      }
+      .terminal-bar svg {
+        width: 13px !important;
+        height: 13px !important;
+      }
+      .terminal-bar .user,
+      .terminal-bar .user-host,
+      .terminal-bar .host,
+      .terminal-bar .dir,
+      .terminal-bar .dollar,
+      .terminal-bar .cmd {
+        font-size: 0.98em !important;
+      }
+    }
+
     /* Opcional: Mejora las líneas divisorias */
     hr, .skills-list:before, .skills-list:after, h2:after {
       content: '';
@@ -313,22 +357,34 @@
 }
 @media (max-width: 650px) {
   .terminal-navbar .terminal-bar {
-    flex-direction: column;
-    gap: 10px;
-    font-size: 1rem;
-    align-items: flex-start;
+    flex-direction: row;
+    gap: 4px;
+    font-size: 0.7rem;
+    align-items: center;
     width: 100%;
     padding-left: 0;
     padding-right: 0;
+    flex-wrap: wrap;
   }
   .terminal-navbar .terminal-bar a {
-    display: block;
-    width: 100%;
-    word-break: break-word;
-    font-size: 1rem;
-    padding: 4px 0;
-    text-align: left;
+    display: inline-block;
+    width: auto;
+    word-break: normal;
+    font-size: 0.7rem;
+    padding: 2px 4px;
+    text-align: center;
     box-sizing: border-box;
+  }
+}
+@media (max-width: 650px) {
+  .neofetch {
+    margin-left: 0 !important;
+    margin-top: 0.5em !important;
+    align-self: flex-start !important;
+    text-align: left !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    padding-left: 0 !important;
   }
 }
   </style>
@@ -344,18 +400,18 @@
   <header>
     <!-- <h1>Welcome to Ogidok dev</h1>
     <p>inspirado en la epoca dorada del internet </p> -->
-    <nav class="terminal-navbar" id="nav">
-      <div class="terminal-bar">
+    <nav class="terminal-navbar" id="nav" >
+      <div class="terminal-bar" style="font-size: 1rem;">
       <a href="#nav" style="color:#45f3ff;">./about</a>
+      <a href="#projects" style="color:#45f3ff;">./projects</a>
       <a href="#about" style="color:#45f3ff;">./skills</a>
       <a href="#skills" style="color:#45f3ff;">./certificaciones</a>
-      <a href="#projects" style="color:#45f3ff;">./projects</a>
       <a href="#contact" style="color:#45f3ff;">./contact</a>
       </div>
     </nav>
   </header>
   <main>
-    <div class="terminal-bar" style="font-family: 'Press Start 2P', monospace; font-size: 1.25rem; color: #fafaff; display: flex; align-items: center; gap: 10px; margin-bottom: 22px; flex-wrap: wrap;">
+    <div class="terminal-bar">
       <span style="display:inline-block; vertical-align:middle; color: white;">
         <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="display:inline-block; vertical-align:middle; fill:currentColor;">
           <title>Linux</title>
@@ -393,7 +449,7 @@
  `++:.                           `-/+/
  .`                                 `
       </pre>
-      <div style="flex:1; min-width:220px; margin-left:50px; margin-top: 2.5em;">
+      <div class="neofetch" style="flex:1; min-width:220px; margin-left:50px; margin-top: 2.5em;">
         
         <table style="font-family:monospace; color:#fff; font-size:0.98rem; background:none;">
           <tr>
@@ -576,7 +632,7 @@
           100%       { transform: translateZ(-20vw) rotateY(-360deg); }
         }
       }
-      @media (max-width: 650px) {
+      @media (max-width: 900px) {
         .icon-cards {
           width: 90vw;
           height: 45vw;
