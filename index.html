@@ -387,6 +387,71 @@
     padding-left: 0 !important;
   }
 }
+
+/* --- ABOUT (Mejor legibilidad móvil) --- */
+@media (max-width: 650px) {
+  #about pre {
+    font-size: 0.78rem;
+    line-height: 1.1;
+    white-space: pre-wrap;   /* evita scroll horizontal */
+    word-break: break-word;
+  }
+  #about table {
+    font-size: 0.8rem;
+    width: 100%;
+    display: block;
+  }
+  #about table tr {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #444;
+    padding: 4px 0;
+  }
+  #about table td {
+    flex: 1;
+    font-size: 0.8rem;
+  }
+  #about table td:first-child {
+    flex: 0.9;
+  }
+  .neofetch {
+    margin-left: 0 !important;
+    margin-top: 0.8em !important;
+    text-align: left !important;
+    width: 100% !important;
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 420px) {
+  #about table td {
+    font-size: 0.72rem;
+  }
+  #about pre {
+    font-size: 0.7rem;
+  }
+}
+
+/* --- SKILLS (Badges más fluidos) --- */
+@media (max-width: 650px) {
+  .skills-list {
+    gap: 6px;
+    justify-content: flex-start;
+  }
+  .skill-badge {
+    font-size: 0.72rem;
+    padding: 5px 9px;
+    border-width: 1.5px;
+  }
+}
+@media (max-width: 420px) {
+  .skills-list {
+    gap: 4px;
+  }
+  .skill-badge {
+    font-size: 0.6rem;
+    padding: 4px 7px;
+  }
+}
   </style>
 </head>
 <body>
@@ -507,43 +572,57 @@
     <section id="skills"></section>
       <h2>Skills</h2>
       <div class="skills-list">
+        <!-- Lenguajes y Frameworks Python -->
         <span class="skill-badge">Python</span>
         <span class="skill-badge">Django</span>
+        <span class="skill-badge">Flask</span>
+        <span class="skill-badge">Pygame</span>
+        <span class="skill-badge">Google Colab</span>
+        <span class="skill-badge">Machine Learning</span>
+        <span class="skill-badge">Scraping Web</span>
+
+        <!-- Lenguajes y Frameworks Web -->
         <span class="skill-badge">HTML</span>
         <span class="skill-badge">CSS</span>
         <span class="skill-badge">JavaScript</span>
-        <span class="skill-badge">React</span>
+        <span class="skill-badge">DOM</span>
+        <span class="skill-badge">BOM</span>
+        <span class="skill-badge">Frontend</span>
+        <span class="skill-badge">Backend</span>
+        <span class="skill-badge">Markdown</span>
+
+        <!-- Node.js y Ecosistema JS -->
+        <span class="skill-badge">Node.js</span>
+        <span class="skill-badge">NPM</span>
+
+        <!-- Bases de Datos -->
         <span class="skill-badge">SQL</span>
+        <span class="skill-badge">PLSQL</span>
         <span class="skill-badge">MongoDB</span>
+
+        <!-- DevOps, Sistemas y Control de Versiones -->
         <span class="skill-badge">Git</span>
         <span class="skill-badge">GitHub</span>
         <span class="skill-badge">Linux</span>
         <span class="skill-badge">Bash</span>
-        <span class="skill-badge">Pentesting</span>
-        <span class="skill-badge">Testing</span>
-        <span class="skill-badge">Nmap</span>
-        <span class="skill-badge">Scraping Web</span>
-        <span class="skill-badge">Backend</span>
-        <span class="skill-badge">Frontend</span>
-        <span class="skill-badge">AWS</span>
-        <span class="skill-badge">Flask</span>
-        <span class="skill-badge">PLSQL</span>
-        <span class="skill-badge">PHP</span>
-        <span class="skill-badge">Android Studio</span>
         <span class="skill-badge">Windows Server</span>
         <span class="skill-badge">Linux Server</span>
         <span class="skill-badge">RHEL</span>
-        <span class="skill-badge">Pygame</span>
-        <span class="skill-badge">Google Colab</span>
-        <span class="skill-badge">Machine Learning</span>
-        <span class="skill-badge">DOM</span>
-        <span class="skill-badge">BOM</span>
+        <span class="skill-badge">AWS</span>
+
+        <!-- Seguridad y Testing -->
+        <span class="skill-badge">Pentesting</span>
+        <span class="skill-badge">Testing</span>
+        <span class="skill-badge">Nmap</span>
+
+        <!-- Otros Frameworks y Herramientas -->
+        <span class="skill-badge">PHP</span>
+        <span class="skill-badge">Android Studio</span>
         <span class="skill-badge">Scrum</span>
         <span class="skill-badge">API OpenAI</span>
         <span class="skill-badge">Chatbots</span>
         <span class="skill-badge">Rasa-AI</span>
         <span class="skill-badge">Pasarelas de pago</span>
-        <span class="skill-badge">Markdown</span>
 
       </div>
     </section>
