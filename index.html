@@ -512,7 +512,15 @@ hr, .skills-list:before, .skills-list:after, h2:after {
 }
 /* --- FIN CARRUSEL MOBILE FIX --- */
 
-
+@media (max-width: 420px) {
+  main, .welcome-block, #about, footer, header { border-radius: 5px;}
+  .skill-badge { font-size: 0.6rem; padding: 4px 7px; }
+  h2 { font-size: 0.85rem;}
+  .project-card { font-size: 0.7rem;}
+  #about table td { font-size: 0.7rem; }
+  #about pre { font-size: 0.7rem; }
+  .skills-list { gap: 4px; }
+}
 @media (max-width: 420px) {
 
   /* ==== INICIO MODIFICACIÓN CARRUSEL 420px ==== */
@@ -673,7 +681,6 @@ hr, .skills-list:before, .skills-list:after, h2:after {
   }
 }
   </style>
-
 </head>
 <body>
 <button id="scrollToTopBtn" title="Subir" aria-label="Subir" tabindex="0" style="font-size:2.2rem; background:none; border:none;">
