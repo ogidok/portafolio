@@ -5,6 +5,7 @@
     --terminal-badge-border: #c77dff;
     --terminal-badge-text: #f3e9fa;
     --terminal-card-border: #ff80ff99;
+  --terminal-section-bg: rgba(14, 10, 22, 0.95);
   }
   /* --- BASE LAYOUT --- */
   body {
@@ -47,6 +48,19 @@
     border-radius: 9px;
     padding: 28px 18px 16px 18px;
     margin-bottom: 26px;
+  }
+  #about.about-card {
+    border-color: transparent;
+  }
+  .about-layout {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .about-summary p {
+    margin: 0 0 8px 0;
+    line-height: 1.4;
   }
   #about pre {
     text-align: left;
@@ -102,41 +116,194 @@
   }
 
   /* --- PROJECTS --- */
-  .proj-grid {
+  .projects-section {
+    margin-top: 38px;
+  }
+  .section-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .projects-intro {
+    font-size: 0.95rem;
+    color: #d0cee2;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .projects-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
+    gap: 26px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
   .project-card {
     background: var(--terminal-card-bg);
     border: 2px solid var(--terminal-card-border);
-    border-radius: 8px;
-    padding: 13px 10px 13px 10px;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   }
-  .project-card a {
-    color: #45f3ff;
-    text-shadow: 0 0 3px #fff, 0 0 1px #000;
+  .project-card::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 12px;
+    border: 1px dashed transparent;
+    transition: border-color 0.2s ease, opacity 0.2s ease;
+    pointer-events: none;
+    opacity: 0;
   }
-  .project-card h3 {
+  .project-card:hover {
+    border-color: #ff80ff;
+    box-shadow: 0 12px 34px rgba(255, 128, 255, 0.18);
+    transform: translateY(-2px);
+  }
+  .project-card:hover::after {
+    border-color: #ff80ff66;
+    opacity: 1;
+  }
+  .project-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .project-card__header h3 {
     color: var(--terminal-accent);
-    font-size: 1rem;
-    margin-bottom: 8px;
+    font-size: 1.08rem;
+    margin: 4px 0 0 0;
   }
-  .project-card img {
-    display: block;
-    margin: 0 auto 9px auto;
-    max-width: 100%;
-    min-width: 200px;
-    border-radius: 5px;
+  .project-context {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #b6fcd5;
+    margin: 0;
+  }
+  .project-status {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 4px 11px;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+  }
+  .status-building { color: #ff80ff; }
+  .status-live { color: #50fa7b; }
+  .status-paused { color: #bbbbbb; }
+  .project-visual {
+    margin: 0;
+    border: 1px dashed var(--terminal-border);
+    border-radius: 11px;
+    padding: 12px;
+    background: rgba(20, 16, 31, 0.65);
+  }
+  .project-visual img {
+    width: 100%;
     object-fit: contain;
-    transition: box-shadow 0.19s, transform 0.19s;
+    max-height: 220px;
+    border-radius: 6px;
+    filter: saturate(0.92);
+    transition: transform 0.25s ease, filter 0.25s ease;
   }
-  .project-card img:hover {
-    transform: scale(1.09);
-    box-shadow: 0 3px 18px var(--terminal-accent);
+  .project-card:hover .project-visual img {
+    transform: scale(1.02);
+    filter: saturate(1.1);
+  }
+  .project-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .project-narrative {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+  .project-narrative span {
+    display: block;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    color: var(--terminal-accent);
+    margin-bottom: 2px;
+  }
+  .project-stack {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .project-stack li {
+    border: 1px dashed #ff80ff88;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #ff80ff;
+    transition: background 0.18s ease, border-color 0.18s ease;
+  }
+  .project-card:hover .project-stack li {
+    background: #ff80ff12;
+    border-color: #ff80ff;
+  }
+  .project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .project-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 7px;
+    border: 1px solid var(--terminal-accent);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    background: var(--terminal-accent);
+    color: #18101b;
+    text-decoration: none;
+    transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+  }
+  .project-btn:hover {
+    background: #fff;
+    color: #14101f;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.22);
+  }
+  .project-btn.ghost {
+    background: transparent;
+    color: #ff80ff;
+    border-style: dashed;
+    cursor: default;
   }
 
+  .skills-section { margin-top: 50px; }
+
   /* --- CERTIFICADOS CARRUSEL --- */
+  .certs-section {
+    margin-top: 48px;
+    opacity: 0.92;
+  }
+  .certs-note {
+    text-align: center;
+    max-width: 520px;
+    margin: -4px auto 22px auto;
+    color: #c7c2d9;
+    line-height: 1.4;
+    font-size: 0.92rem;
+  }
   .cert-title {
     font-size: 0.7rem;
     text-align: center;
@@ -152,14 +319,16 @@
   }
   .icon-cards {
     position: relative;
-    width: 60vw;
-    height: 40vw;
-    max-width: 380px;
-    max-height: 220px;
+    width: 48vw;
+    height: 32vw;
+    max-width: 320px;
+    max-height: 190px;
     margin: 0 auto;
     color: white;
     perspective: 1000px;
     transform-origin: center;
+    filter: saturate(0.85);
+    opacity: 0.9;
   }
   .icon-cards__content {
     position: absolute;
@@ -302,7 +471,7 @@
   /* --- RESPONSIVE QUERIES --- */
   @media (max-width: 900px) {
     main { max-width: 99vw; }
-    .proj-grid { grid-template-columns: 1fr; gap: 15px; }
+    .projects-grid { grid-template-columns: 1fr; gap: 20px; }
 
     /* Carrusel: centrado perfecto y proporción estable (tabla/phone) */
     .icon-cards {
