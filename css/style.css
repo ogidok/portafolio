@@ -339,29 +339,37 @@
     display: block;
   }
   .icon-cards {
-    position: relative;
-    width: 48vw;
-    height: 32vw;
-    max-width: 320px;
-    max-height: 190px;
-    margin: 0 auto;
-    color: white;
-    perspective: 1000px;
-    transform-origin: center;
-    filter: saturate(0.85);
-    opacity: 0.9;
-  }
+      position: relative;
+      width: 48vw;
+      height: 32vw;
+      max-width: 320px;
+      max-height: 190px;
+      margin: 0 auto;
+      color: white;
+      perspective: 1000px;
+      transform-origin: center;
+      filter: saturate(0.85);
+      opacity: 0.9;
+      cursor: grab;
+      --carousel-depth: 30vw;
+      touch-action: pan-y;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+    .icon-cards--dragging {
+      cursor: grabbing;
+    }
   .icon-cards__content {
     position: absolute;
     width: 100%;
     height: 100%;
     transform-origin: center;
     transform-style: preserve-3d;
-    transform: translateZ(-30vw) rotateY(0);
-    animation: carousel 12s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    transform: translateZ(calc(-1 * var(--carousel-depth))) rotateY(var(--carousel-angle, 0deg));
+    transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
   }
-  .icon-cards__content.step-animation {
-    animation: carousel 10s infinite steps(5) forwards;
+  .icon-cards--dragging .icon-cards__content {
+    transition: none;
   }
   .icon-cards__item {
     position: absolute;
@@ -381,31 +389,23 @@
   }
   .icon-cards__item:nth-child(1) {
     background: transparent;
-    transform: rotateY(0deg) translateZ(30vw);
+    transform: rotateY(0deg) translateZ(var(--carousel-depth));
   }
   .icon-cards__item:nth-child(2) {
     background: transparent;
-    transform: rotateY(72deg) translateZ(30vw);
+    transform: rotateY(72deg) translateZ(var(--carousel-depth));
   }
   .icon-cards__item:nth-child(3) {
     background: transparent;
-    transform: rotateY(144deg) translateZ(30vw);
+    transform: rotateY(144deg) translateZ(var(--carousel-depth));
   }
   .icon-cards__item:nth-child(4) {
     background: transparent;
-    transform: rotateY(216deg) translateZ(30vw);
+    transform: rotateY(216deg) translateZ(var(--carousel-depth));
   }
   .icon-cards__item:nth-child(5) {
     background: transparent;
-    transform: rotateY(288deg) translateZ(30vw);
-  }
-  @keyframes carousel {
-    0%, 16%   { transform: translateZ(-30vw) rotateY(0); }
-    20%, 36%  { transform: translateZ(-30vw) rotateY(-72deg); }
-    40%, 56%  { transform: translateZ(-30vw) rotateY(-144deg);}
-    60%, 76%  { transform: translateZ(-30vw) rotateY(-216deg);}
-    80%, 96%  { transform: translateZ(-30vw) rotateY(-288deg);}
-    100%      { transform: translateZ(-30vw) rotateY(-360deg);}
+    transform: rotateY(288deg) translateZ(var(--carousel-depth));
   }
   .icon-cards__item .cert-card.main {
     min-width: 200px;
@@ -420,6 +420,9 @@
     max-height: 180px;
     border-radius: 4px;
     box-shadow: 0 1px 6px #0005;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
   }
 
   /* --- CONTACT --- */
@@ -504,6 +507,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      --carousel-depth: 36vw;
     }
     .icon-cards__item {
       width: 100%;
@@ -535,24 +539,9 @@
       object-fit: contain;
     }
 
-    /* Mantener profundidad y animación para <=900 */
-    .icon-cards__item:nth-child(1) { transform: rotateY(0deg) translateZ(36vw); }
-    .icon-cards__item:nth-child(2) { transform: rotateY(72deg) translateZ(36vw); }
-    .icon-cards__item:nth-child(3) { transform: rotateY(144deg) translateZ(36vw); }
-    .icon-cards__item:nth-child(4) { transform: rotateY(216deg) translateZ(36vw); }
-    .icon-cards__item:nth-child(5) { transform: rotateY(288deg) translateZ(36vw); }
     .icon-cards__content {
-      animation: carousel900 12s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
       height: 100%;
     }
-  }
-  @keyframes carousel900 {
-    0%, 16%   { transform: translateZ(-36vw) rotateY(0); }
-    20%, 36%  { transform: translateZ(-36vw) rotateY(-72deg); }
-    40%, 56%  { transform: translateZ(-36vw) rotateY(-144deg);}
-    60%, 76%  { transform: translateZ(-36vw) rotateY(-216deg);}
-    80%, 96%  { transform: translateZ(-36vw) rotateY(-288deg);}
-    100%      { transform: translateZ(-36vw) rotateY(-360deg);}
   }
 
   /* --- MOBILE CARRUSEL FIX: 650px --- */
@@ -573,6 +562,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      --carousel-depth: 50vw;
     }
     .icon-cards__item {
       width: 100%;
@@ -605,16 +595,6 @@
       object-fit: contain;
     }
 
-    /* Profundidad y animación para 650 */
-    .icon-cards__item:nth-child(1) { transform: rotateY(0deg) translateZ(50vw); }
-    .icon-cards__item:nth-child(2) { transform: rotateY(72deg) translateZ(50vw); }
-    .icon-cards__item:nth-child(3) { transform: rotateY(144deg) translateZ(50vw); }
-    .icon-cards__item:nth-child(4) { transform: rotateY(216deg) translateZ(50vw); }
-    .icon-cards__item:nth-child(5) { transform: rotateY(288deg) translateZ(50vw); }
-    .icon-cards__content {
-      height: 100%;
-      animation: carousel650 12s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
-    }
     /* ==== FIN CARRUSEL MÓVIL ==== */
 
     .project-card h3 { font-size: 0.95rem;}
@@ -683,14 +663,6 @@
       font-size: 0.85rem;
     }
   }
-  @keyframes carousel650 {
-    0%, 16%   { transform: translateZ(-50vw) rotateY(0); }
-    20%, 36%  { transform: translateZ(-50vw) rotateY(-72deg); }
-    40%, 56%  { transform: translateZ(-50vw) rotateY(-144deg);}
-    60%, 76%  { transform: translateZ(-50vw) rotateY(-216deg);}
-    80%, 96%  { transform: translateZ(-50vw) rotateY(-288deg);}
-    100%      { transform: translateZ(-50vw) rotateY(-360deg);}
-  }
   /* --- FIN CARRUSEL MOBILE FIX --- */
 
   @media (max-width: 420px) {
@@ -711,6 +683,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      --carousel-depth: 70vw;
     }
     .icon-cards__item {
       width: 100%;
@@ -742,28 +715,10 @@
       object-fit: contain;
     }
 
-    /* Profundidad y animación específicas a 420px */
-    .icon-cards__item:nth-child(1) { transform: rotateY(0deg) translateZ(70vw); }
-    .icon-cards__item:nth-child(2) { transform: rotateY(72deg) translateZ(70vw); }
-    .icon-cards__item:nth-child(3) { transform: rotateY(144deg) translateZ(70vw); }
-    .icon-cards__item:nth-child(4) { transform: rotateY(216deg) translateZ(70vw); }
-    .icon-cards__item:nth-child(5) { transform: rotateY(288deg) translateZ(70vw); }
-    .icon-cards__content {
-      height: 100%;
-      animation: carousel420 12s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
-    }
 
     .cert-title { font-size: 0.7rem;}
     .cert-desc { font-size: 0.55rem;}
     /* ==== FIN Carrusel 420px ==== */
-  }
-  @keyframes carousel420 {
-    0%, 16%   { transform: translateZ(-70vw) rotateY(0); }
-    20%, 36%  { transform: translateZ(-70vw) rotateY(-72deg); }
-    40%, 56%  { transform: translateZ(-70vw) rotateY(-144deg);}
-    60%, 76%  { transform: translateZ(-70vw) rotateY(-216deg);}
-    80%, 96%  { transform: translateZ(-70vw) rotateY(-288deg);}
-    100%      { transform: translateZ(-70vw) rotateY(-360deg);}
   }
 
   /* Extra small: mejorar proporción y centrado extremo */
@@ -771,6 +726,7 @@
     .icon-cards {
       height: clamp(200px, 64vw, 320px);
       margin: 8px auto;
+      --carousel-depth: 80vw;
     }
     .icon-cards__item .cert-card.main {
       padding: 3vw 3vw;
@@ -779,22 +735,6 @@
       max-height: clamp(100px, 36vw, 200px);
     }
 
-    .icon-cards__item:nth-child(1) { transform: rotateY(0deg) translateZ(80vw); }
-    .icon-cards__item:nth-child(2) { transform: rotateY(72deg) translateZ(80vw); }
-    .icon-cards__item:nth-child(3) { transform: rotateY(144deg) translateZ(80vw); }
-    .icon-cards__item:nth-child(4) { transform: rotateY(216deg) translateZ(80vw); }
-    .icon-cards__item:nth-child(5) { transform: rotateY(288deg) translateZ(80vw); }
-    .icon-cards__content {
-      animation: carousel385 12s infinite cubic-bezier(0.77, 0, 0.175, 1) forwards;
-    }
-  }
-  @keyframes carousel385 {
-    0%, 16%   { transform: translateZ(-80vw) rotateY(0); }
-    20%, 36%  { transform: translateZ(-80vw) rotateY(-72deg); }
-    40%, 56%  { transform: translateZ(-80vw) rotateY(-144deg);}
-    60%, 76%  { transform: translateZ(-80vw) rotateY(-216deg);}
-    80%, 96%  { transform: translateZ(-80vw) rotateY(-288deg);}
-    100%      { transform: translateZ(-80vw) rotateY(-360deg);}
   }
 
   /* --- TERMINAL BAR MOBILE --- */

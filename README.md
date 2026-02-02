@@ -1,1 +1,2 @@
 # portafolio
+Este proyecto es un portafolio personal donde presento mis habilidades, experiencia y proyectos destacados, desarrollado con tecnologías web modernas para ofrecer una navegación rápida y limpia.

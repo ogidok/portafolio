@@ -373,68 +373,6 @@
     </p>
   </footer>
   <!-- ===== SCRIPTS ===== -->
-  <script>
-    // Fondo lluvia pixelart tipo Matrix
-    const canvas = document.getElementById('rain-canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.style.position = "fixed";
-    canvas.style.top = 0;
-    canvas.style.left = 0;
-    canvas.style.width = "100vw";
-    canvas.style.height = "100vh";
-    canvas.style.zIndex = 0;
-    canvas.style.pointerEvents = "none";
-    canvas.style.opacity = 0.25;
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    const fontSize = 16;
-    let columns, drops;
-    function setupRain() {
-      columns = Math.floor(canvas.width / fontSize);
-      drops = Array(columns).fill(1);
-    }
-    setupRain();
-    window.addEventListener('resize', setupRain);
-    function drawRain() {
-      ctx.fillStyle = "rgba(0,0,0,0.6)";
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.font = fontSize + "px 'Press Start 2P', monospace";
-      ctx.fillStyle = "#ff0000";
-      for (let i = 0; i < drops.length; i++) {
-        const text = String.fromCharCode(0x2592 + Math.floor(Math.random() * 10));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-    }
-    setInterval(drawRain, 60);
-  </script>
-  <script>
-    function classToggle() {
-      var el = document.querySelector('.icon-cards__content');
-      el.classList.toggle('step-animation');
-    }
-    // document.querySelector('#toggle-animation').addEventListener('click', classToggle);
-  </script>
-  <script>
-    // Botón subir arriba
-    const scrollBtn = document.getElementById('scrollToTopBtn');
-    window.addEventListener('scroll', function() {
-      if (document.body.scrollTop > 260 || document.documentElement.scrollTop > 260) {
-        scrollBtn.style.display = "block";
-      } else {
-        scrollBtn.style.display = "none";
-      }
-    });
-    scrollBtn.addEventListener('click', function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
