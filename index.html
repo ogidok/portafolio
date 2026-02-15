@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ogidok</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/icon.jpg" type="image/png">
+  <meta property="og:image" content="img\previa.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+<button id="scrollToTopBtn" title="Subir" aria-label="Subir" tabindex="0" style="font-size:2.2rem; background:none; border:none;">
+  <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" focusable="false" style="vertical-align:middle;">
+    <polyline points="8,20 16,10 24,20" fill="none" stroke="#ff80ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+  <canvas id="rain-canvas" style="background: none !important;"></canvas>
+  <div id="ascii-bg" style="background: none !important;"></div>
+  <header>
+    <nav class="terminal-navbar" id="nav" >
+      <div class="terminal-bar" style="font-size: 1rem;">
+      <a href="#about" style="color:#45f3ff;">./about</a>
+      <a href="#projects" style="color:#45f3ff;">./projects</a>
+      <a href="#skills" style="color:#45f3ff;">./skills</a>
+      <a href="#carrucel" style="color:#45f3ff;">./certificaciones</a>
+      <a href="#contact" style="color:#45f3ff;">./contact</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="about" class="about-card">
+      <div class="terminal-bar">
+        <span style="display:inline-block; vertical-align:middle; color: white;">
+          <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="display:inline-block; vertical-align:middle; fill:currentColor;">
+            <title>Linux</title>
+            <path d="M11.39.605C10.376 3.092 9.764 4.72 8.635 7.132c.693.734 1.543 1.589 2.923 2.554-1.484-.61-2.496-1.224-3.252-1.86C6.86 10.842 4.596 15.138 0 23.395c3.612-2.085 6.412-3.37 9.021-3.862a6.61 6.61 0 01-.171-1.547l.003-.115c.058-2.315 1.261-4.095 2.687-3.973 1.426.12 2.534 2.096 2.478 4.409a6.52 6.52 0 01-.146 1.243c2.58.505 5.352 1.787 8.914 3.844-.702-1.293-1.33-2.459-1.929-3.57-.943-.73-1.926-1.682-3.933-2.713 1.38.359 2.367.772 3.137 1.234-6.09-11.334-6.582-12.84-8.67-17.74zM22.898 21.36v-.623h-.234v-.084h.562v.084h-.234v.623h.331v-.707h.142l.167.5.034.107a2.26 2.26 0 01.038-.114l.17-.493H24v.707h-.091v-.593l-.206.593h-.084l-.205-.602v.602h-.091"></path>
+          </svg>
+        </span>
+        <span class="user-host">
+          <span class="user" style="color:#fff; font-weight:bold; text-shadow:0 0 3px #fff;">ogidok</span>
+          <span style="color:#ff80ff;">@</span>
+          <span class="host" style="color:#45f3ff;">portafolio</span>
+          <span class="dir" style="color:#f7ff7a;"> ~ </span>
+        </span>
+        <span class="dollar" style="color:#b6fcd5; font-weight:bold;">$</span>
+        <span class="cmd" style="color:#fff; font-weight:bold;">neofetch</span>
+      </div>
+      <div class="about-layout" style="color:#ff80ff; font-family:monospace; font-size:0.85rem; line-height:1.1; background:none; margin:0; padding:0 10px 0 0; user-select:text; display:flex; align-items:flex-start; min-width:220px; min-height:120px;">
+        <pre class="ascii-art" style="margin:0; color:#00fff7; background:none; font-family:monospace; font-size:1.05em; line-height:1.1; user-select:text;">
+                   -`
+                  .o+`
+                 `ooo/
+                `+oooo:
+               `+oooooo:
+               -+oooooo+:
+             `/:-:++oooo+:
+            `/++++/+++++++:
+           `/++++++++++++++:
+          `/+++ooooooooooooo/`
+         ./ooosssso++osssssso+`
+        .oossssso-````/ossssss+`
+       -osssssso.      :ssssssso.
+      :osssssss/        osssso+++.
+     /ossssssss/        +ssssooo/- 
+   `/ossssso+/:-        -:/+osssso+-
+  `+sso+:-`                 `.-/+oso:
+ `++:.                           `-/+/
+ .`                                 `
+        </pre>
+        <div class="neofetch" style="flex:1; min-width:220px; margin-left:50px; margin-top: 2.5em;">
+          <table style="font-family:monospace; color:#fff; font-size:0.98rem; background:none;">
+            <tr>
+              <td style="color:#ff80ff;">Usuario</td>
+              <td>: Ogidok</td>
+            </tr>
+            <tr>
+              <td style="color:#ff80ff;">Rol</td>
+              <td>: Software Engineer</td>
+            </tr>
+            <tr>
+              <td style="color:#ff80ff;">Años de estudio</td>
+              <td>: 5 años</td>
+            </tr>
+            <tr>
+              <td style="color:#ff80ff;">Trabajando en el rubro</td>
+              <td>: 2 años</td>
+            </tr>
+            <tr>
+              <td style="color:#ff80ff;">Formación</td>
+              <td>: Autodidacta/Universidad</td>
+            </tr>
+            <tr>
+              <td style="color:#ff80ff;">OS favorito</td>
+              <td>: Arch Linux</td>
+            </tr>
+           
+          </table>
+          <div style="margin-top:8px; display:flex; gap:2px; flex-wrap:wrap;">
+            <span style="display:inline-block; width:18px; height:18px; background:#ff5555;"></span>
+            <span style="display:inline-block; width:18px; height:18px; background:#f1fa8c;"></span>
+            <span style="display:inline-block; width:18px; height:18px; background:#50fa7b;"></span>
+            <span style="display:inline-block; width:18px; height:18px; background:#8be9fd;"></span>
+            <span style="display:inline-block; width:18px; height:18px; background:#bd93f9;"></span>
+            <span style="display:inline-block; width:18px; height:18px; background:#ff79c6;"></span>
+            <span style="display:inline-block; width:18px; height:18px; background:#bbbbbb;"></span>
+            <span style="display:inline-block; width:18px; height:18px; background:#282a36; border:1px solid #444;"></span>
+          </div>
+        </div>
+      </div>
+      <div class="about-summary" style="width:100%; margin-top:14px; color:#b6fcd5;">
+        <p>Especializado en desarrollo backend y full-stack con enfoque en arquitecturas escalables y optimización de procesos.</p>
+        <p>Experiencia en automatización, integración de APIs y modernización de sistemas heredados. Versatilidad técnica con capacidad para adaptarme a nuevas tecnologías y metodologías ágiles.</p>
+        <p>Orientado a resultados, con historial comprobado en proyectos de producción y atención al detalle en calidad de código.</p></div>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <div class="section-heading">
+        <h2>Main Projects</h2>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card">
+          <header class="project-card__header">
+            <div>
+              <p class="project-context">Cliente real · Gestión de turnos omnicanal</p>
+              <h3>KioskoApp</h3>
+            </div>
+            <span class="project-status status-live">En producción</span>
+          </header>
+          <figure class="project-visual">
+            <img src="proyects/RemoteMedia.png" alt="Totem gestor de turnos Android 7.2" loading="lazy">
+          </figure>
+          <div class="project-body">
+            <div class="project-narrative">
+              <p><span>Problema</span>RemoteMedia comercializa tótems Android y en este despliegue requería un software propio que generara e imprimiera tickets de atención desde el tótem y, al mismo tiempo, alimentara un monitor público con los turnos emitidos.</p>
+              <p><span>Solución</span>Desarrollé una app Kotlin compatible con Android 7.2 que se comunica vía LAN con un backend Flask: el backend administra cajas y llamados, expone REST APIs, mantiene WebSockets activos y sincroniza en modo asíncrono tanto el tótem como el monitor para que los datos estén siempre actualizados.</p>
+            </div>
+            <ul class="project-stack" aria-label="Stack principal">
+              <li aria-label="Kotlin">
+                <i class="devicon-kotlin-plain colored" aria-hidden="true"></i>
+                <span class="sr-only">Kotlin</span>
+              </li>
+              <li aria-label="Android">
+                <i class="devicon-android-plain colored" aria-hidden="true"></i>
+                <span class="sr-only">Android 7.2</span>
+              </li>
+              <li aria-label="Python">
+                <i class="devicon-python-plain colored" aria-hidden="true"></i>
+                <span class="sr-only">Python</span>
+              </li>
+              <li aria-label="Flask">
+                <i class="devicon-flask-original" aria-hidden="true"></i>
+                <span class="sr-only">Flask</span>
+              </li>
+            </ul>
+          </div>
+          <div class="project-actions">
+            <span class="project-btn ghost" aria-disabled="true">Repo privado</span>
+          </div>
+        </article>
+        
+        <article class="project-card">
+          <header class="project-card__header">
+            <div>
+              <p class="project-context">Proyecto experimental · Extensión web</p>
+              <h3>Click2cash</h3>
+            </div>
+            <span class="project-status status-live">En producción</span>
+          </header>
+          <figure class="project-visual">
+            <img src="proyects/click2cash.png" alt="Click2cash extension preview" loading="lazy">
+          </figure>
+          <div class="project-body">
+            <div class="project-narrative">
+              <p><span>Problema</span>Compradores frecuentes debían convertir manualmente los precios en USD/EUR al planificar compras online.</p>
+              <p><span>Solución</span>Construí una extensión que detecta la ubicación por IP y convierte precios en vivo usando tasas oficiales para comparar rápidamente.</p>
+            </div>
+            <ul class="project-stack" aria-label="Stack principal">
+              <li aria-label="JavaScript">
+                <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
+                <span class="sr-only">JavaScript</span>
+              </li>
+              <li aria-label="Chrome APIs">
+                <i class="devicon-chrome-plain colored" aria-hidden="true"></i>
+                <span class="sr-only">Chrome APIs</span>
+              </li>
+              <li aria-label="HTML5">
+                <i class="devicon-html5-plain colored" aria-hidden="true"></i>
+                <span class="sr-only">HTML5</span>
+              </li>
+              <li aria-label="CSS3">
+                <i class="devicon-css3-plain colored" aria-hidden="true"></i>
+                <span class="sr-only">CSS3</span>
+              </li>
+            </ul>
+          </div>
+          <div class="project-actions">
+            <a class="project-btn" href="https://github.com/ogidok/Click2Cash" target="_blank" rel="noopener noreferrer">Ver código</a>
+            <a class="project-btn" href="https://chromewebstore.google.com/detail/jamkblkkihhcdjoffghiapplikndbknk?utm_source=item-share-cb" target="_blank" rel="noopener noreferrer">Chrome Store</a>
+            </div>
+        </article>
+
+        <article class="project-card">
+          <header class="project-card__header">
+            <div>
+              <p class="project-context">Cliente real · Ecommerce PyME</p>
+              <h3>Pasate1rollo</h3>
+            </div>
+            <span class="project-status status-paused">En pausa</span>
+          </header>
+          <figure class="project-visual">
+            <img src="proyects/pst1r.png" alt="Pasate1rollo preview" loading="lazy">
+          </figure>
+          <div class="project-body">
+            <div class="project-narrative">
+              <p><span>Problema</span>La pyme no contaba con un canal digital unificado para cotizar, cobrar y seguir pedidos personalizados.</p>
+              <p><span>Solución</span>Diseñé un ecommerce modular en Django que automatiza catálogos, cálculo de pedidos y flujos postventa.</p>
+            </div>
+            <ul class="project-stack" aria-label="Stack principal">
+              <li aria-label="Django">
+                <i class="devicon-django-plain" aria-hidden="true"></i>
+                <span class="sr-only">Django</span>
+              </li>
+              <li aria-label="Python">
+                <i class="devicon-python-plain colored" aria-hidden="true"></i>
+                <span class="sr-only">Python</span>
+              </li>
+              <li aria-label="JavaScript">
+                <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
+                <span class="sr-only">JavaScript</span>
+              </li>
+              <li aria-label="HTML5">
+                <i class="devicon-html5-plain colored" aria-hidden="true"></i>
+                <span class="sr-only">HTML5</span>
+              </li>
+              <li aria-label="CSS3">
+                <i class="devicon-css3-plain colored" aria-hidden="true"></i>
+                <span class="sr-only">CSS3</span>
+              </li>
+            </ul>
+          </div>
+          <div class="project-actions">
+            <span class="project-btn ghost" aria-disabled="true">Repo privado</span>
+          </div>
+        </article>
+
+        
+
+        
+      </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <!-- Lenguajes y Frameworks Python -->
+        <span class="skill-badge">Python</span>
+        <span class="skill-badge">Django</span>
+        <span class="skill-badge">Flask</span>
+        <span class="skill-badge">Machine Learning</span>
+        <span class="skill-badge">Scraping Web</span>
+        <!-- Lenguajes y Frameworks Web -->
+        <span class="skill-badge">HTML</span>
+        <span class="skill-badge">CSS</span>
+        <span class="skill-badge">JavaScript</span>
+        <span class="skill-badge">Markdown</span>
+        <!-- Node.js y Ecosistema JS -->
+        <span class="skill-badge">Node.js</span>
+        <!-- Bases de Datos -->
+        <span class="skill-badge">SQL</span>
+        <span class="skill-badge">PLSQL</span>
+        <span class="skill-badge">MongoDB</span>
+        <!-- DevOps, Sistemas y Control de Versiones -->
+        <span class="skill-badge">Git/GitHub</span>
+        <span class="skill-badge">Linux</span>
+        <span class="skill-badge">Bash</span>
+        <span class="skill-badge">Windows Server</span>
+        <span class="skill-badge">RHEL</span>
+        <!-- Seguridad y Testing -->
+        <span class="skill-badge">Testing</span>
+        <span class="skill-badge">Nmap</span>
+        <!-- Otros Frameworks y Herramientas -->
+        <span class="skill-badge">PHP</span>
+        <span class="skill-badge">Android Studio</span>
+        <span class="skill-badge">Scrum</span>
+        <span class="skill-badge">API OpenAI</span>
+        <span class="skill-badge">Vector Embeddings</span>
+        <span class="skill-badge">Chatbots</span>
+        <span class="skill-badge">Pasarelas de pago</span>
+      </div>
+    </section>
+
+    <section id="carrucel" class="certs-section">
+      <h2 style="text-align: center;">Certs</h2>
+      <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+      <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+        <figure class="icon-cards" style="margin: 0 auto;">
+          <div class="icon-cards__content">
+            <div class="icon-cards__item">
+              <div class="cert-card main" style="display: flex; flex-direction: column; align-items: center;">
+                <img src="certs/pythontotal.jpg" alt="Python Total" class="cert-img" style="display: block; margin: 0 auto;">
+                <div class="cert-title" style="text-align: center;">Python Total</div>
+                <div class="cert-desc" style="text-align: center;">Curso Avanzado Python</div>
+              </div>
+            </div>
+            <div class="icon-cards__item">
+              <div class="cert-card main" style="display: flex; flex-direction: column; align-items: center;">
+                <img src="certs/oraclecertificacion.jpg" alt="PLSQL ORACLE" class="cert-img" style="display: block; margin: 0 auto;">
+                <div class="cert-title" style="text-align: center;">PLSQL ORACLE</div>
+                <div class="cert-desc" style="text-align: center;">DB Programing SQL</div>
+              </div>
+            </div>
+            <div class="icon-cards__item">
+              <div class="cert-card main" style="display: flex; flex-direction: column; align-items: center;">
+                <img src="certs/htmlcertificado.png" alt="HTML5" class="cert-img" style="display: block; margin: 0 auto;">
+                <div class="cert-title" style="text-align: center;">HTML5</div>
+                <div class="cert-desc" style="text-align: center;">HTML5 y CSS Avanzado</div>
+              </div>
+            </div>
+            <div class="icon-cards__item">
+              <div class="cert-card main" style="display: flex; flex-direction: column; align-items: center;">
+                <img src="certs/fullstack.jpg" alt="Fullstack" class="cert-img" style="display: block; margin: 0 auto;">
+                <div class="cert-title" style="text-align: center;">Fullstack</div>
+                <div class="cert-desc" style="text-align: center;">Desarrollo Web Fullstack</div>
+              </div>
+            </div>
+            <div class="icon-cards__item">
+              <div class="cert-card main" style="display: flex; flex-direction: column; align-items: center;">
+                <img src="certs/cert_ia.png" alt="IA" class="cert-img" style="display: block; margin: 0 auto;">
+                <div class="cert-title" style="text-align: center;">Desarrollo con IA</div>
+                <div class="cert-desc" style="text-align: center;">Agentes de desarrollo</div>
+              </div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <section id="contact" style="list-style: none;">
+      <h2>Find me on the web</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li>Email: <a>ogidokdev@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/ogidok" target="_blank">https://github.com/ogidok</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>Powered by Ogidok &mdash; 
+      <a href="https://github.com/ogidok" target="_blank" style="vertical-align:middle;">
+        <span style="display:inline-block; vertical-align:middle; margin-right:4px;">
+          <svg width="18" height="18" viewBox="0 0 18 18" style="image-rendering:pixelated;" xmlns="http://www.w3.org/2000/svg">
+            <rect width="18" height="18" fill="#18101b"/>
+            <rect x="4" y="3" width="10" height="10" fill="#fff"/>
+            <rect x="6" y="5" width="6" height="6" fill="#18101b"/>
+            <rect x="7" y="7" width="1" height="1" fill="#fff"/>
+            <rect x="10" y="7" width="1" height="1" fill="#fff"/>
+            <rect x="8" y="9" width="2" height="1" fill="#fff"/>
+          </svg>
+        </span>
+        github.com/ogidok
+      </a>
+    </p>
+  </footer>
+  <!-- ===== SCRIPTS ===== -->
+  <script src="js/main.js"></script>
+</body>
+</html>
