@@ -75,6 +75,12 @@ if (carousel) {
   const rotationStep = totalSlides > 0 ? 360 / totalSlides : 0;
   const autoRotateDelay = 2400;
 
+  if (content && totalSlides > 0) {
+    Array.from(content.children).forEach((slide, index) => {
+      slide.style.setProperty('--item-angle', `${index * rotationStep}deg`);
+    });
+  }
+
   let currentIndex = 0;
   let currentAngle = 0;
   let autoRotateId = null;

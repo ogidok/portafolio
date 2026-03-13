@@ -382,30 +382,12 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     border-radius: 6px;
     transform-origin: center;
+    background: transparent;
+    transform: rotateY(var(--item-angle, 0deg)) translateZ(var(--carousel-depth));
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-  }
-  .icon-cards__item:nth-child(1) {
-    background: transparent;
-    transform: rotateY(0deg) translateZ(var(--carousel-depth));
-  }
-  .icon-cards__item:nth-child(2) {
-    background: transparent;
-    transform: rotateY(72deg) translateZ(var(--carousel-depth));
-  }
-  .icon-cards__item:nth-child(3) {
-    background: transparent;
-    transform: rotateY(144deg) translateZ(var(--carousel-depth));
-  }
-  .icon-cards__item:nth-child(4) {
-    background: transparent;
-    transform: rotateY(216deg) translateZ(var(--carousel-depth));
-  }
-  .icon-cards__item:nth-child(5) {
-    background: transparent;
-    transform: rotateY(288deg) translateZ(var(--carousel-depth));
   }
   .icon-cards__item .cert-card.main {
     min-width: 200px;
