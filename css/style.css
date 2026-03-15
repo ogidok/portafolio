@@ -604,7 +604,7 @@
       text-align: center;
       box-sizing: border-box;
     }
-    .neofetch {
+    .fastfetch {
       margin-left: 0 !important;
       margin-top: 0.5em !important;
       align-self: flex-start !important;
@@ -637,7 +637,7 @@
     #about table td:first-child {
       flex: 0.9;
     }
-    .neofetch {
+    .fastfetch {
       margin-left: 0 !important;
       margin-top: 0.8em !important;
       text-align: left !important;
