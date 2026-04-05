@@ -580,7 +580,7 @@ footer {
 
 /* Desktop scale up */
 @media (min-width: 1024px) {
-    body { font-size: 16px; }
+    body { font-size: 15px; }
 
     .nav-container,
     .hero,
@@ -590,8 +590,8 @@ footer {
         max-width: 1360px;
     }
 
-    .logo { font-size: 1.2rem; }
-    .nav-links a { font-size: 0.92rem; }
+    .logo { font-size: 1.08rem; }
+    .nav-links a { font-size: 0.85rem; }
 
     .hero {
         padding: 200px 2.5rem 120px;
@@ -602,32 +602,32 @@ footer {
     }
 
     .terminal-text {
-        font-size: 1.1rem;
+        font-size: 0.98rem;
         margin-bottom: 1rem;
     }
 
-    .glitch { font-size: 5.4rem; }
-    .role { font-size: 2.25rem; }
+    .glitch { font-size: 4.8rem; }
+    .role { font-size: 2rem; }
 
     .description {
         max-width: 900px;
     }
 
     .description p {
-        font-size: 1.08rem;
-        line-height: 1.7;
+        font-size: 0.98rem;
+        line-height: 1.62;
     }
 
     .btn {
-        font-size: 1.02rem;
-        padding: 1rem 2.4rem;
+        font-size: 0.92rem;
+        padding: 0.9rem 2rem;
     }
 
-    .section-title { font-size: 2.15rem; }
+    .section-title { font-size: 1.95rem; }
 
-    .project-info h4 { font-size: 1.35rem; }
+    .project-info h4 { font-size: 1.22rem; }
     .project-info p {
-        font-size: 0.95rem;
+        font-size: 0.88rem;
         height: auto;
         min-height: 96px;
     }
@@ -638,16 +638,16 @@ footer {
         height: 38px;
     }
     .project-links a,
-    .private-repo { font-size: 0.84rem; }
+    .private-repo { font-size: 0.78rem; }
 
-    .skill-category h5 { font-size: 1rem; }
-    .skill-list span { font-size: 0.92rem; }
+    .skill-category h5 { font-size: 0.9rem; }
+    .skill-list span { font-size: 0.84rem; }
 
     .cert-title { font-size: 0.82rem; }
     .cert-desc { font-size: 0.64rem; }
 
-    .contact-btn { font-size: 0.88rem; }
-    .system-status { font-size: 0.84rem; }
+    .contact-btn { font-size: 0.8rem; }
+    .system-status { font-size: 0.76rem; }
 }
 
 /* --- RESPONSIVE QUERIES --- */
