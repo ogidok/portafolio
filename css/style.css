@@ -527,7 +527,10 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero { padding: 150px 1.4rem 90px; }
+    .nav-container {
+        padding: calc(0.95rem + env(safe-area-inset-top)) 1.1rem 0.9rem;
+    }
+    .hero { padding: calc(205px + env(safe-area-inset-top)) 1.4rem 90px; }
     .hero-content { grid-template-columns: 1fr; text-align: center; }
     .glitch { font-size: 2.5rem; }
     .nav-links { display: none; }
@@ -553,21 +556,30 @@ footer {
         padding: 200px 2.5rem 120px;
     }
 
-    .glitch { font-size: 5.6rem; }
-    .role { font-size: 2.25rem; }
+    .hero-text {
+        max-width: 980px;
+    }
+
+    .terminal-text {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    .glitch { font-size: 6.4rem; }
+    .role { font-size: 2.7rem; }
 
     .description {
-        max-width: 760px;
+        max-width: 900px;
     }
 
     .description p {
-        font-size: 1.15rem;
-        line-height: 1.75;
+        font-size: 1.3rem;
+        line-height: 1.85;
     }
 
     .btn {
-        font-size: 1.05rem;
-        padding: 1rem 2.4rem;
+        font-size: 1.2rem;
+        padding: 1.15rem 2.8rem;
     }
 
     .section-title { font-size: 2.45rem; }
@@ -599,6 +611,7 @@ footer {
 
 /* --- RESPONSIVE QUERIES --- */
 @media (max-width: 900px) {
+    section { scroll-margin-top: calc(110px + env(safe-area-inset-top)); }
     main { max-width: 99vw; }
     .projects-grid { grid-template-columns: 1fr; gap: 20px; }
 
@@ -655,7 +668,7 @@ footer {
     header { border-radius: 10px 10px 0 0; }
     footer { border-radius: 0 0 10px 10px; }
     .welcome-block, #about { padding: 15px 4vw 8px 4vw; }
-    .hero { padding-top: 132px; }
+    .hero { padding-top: calc(188px + env(safe-area-inset-top)); }
     .skills-list { gap: 6px; justify-content: flex-start; }
     .skill-badge { font-size: 0.72rem; padding: 5px 9px; border-width: 1.5px; }
 
