@@ -388,7 +388,8 @@ nav {
 }
 
 .skill-window-top {
-    height: 44px;
+    min-height: 44px;
+    height: auto;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -413,6 +414,9 @@ nav {
     padding: 0;
     border: none;
     font-size: 0.95rem;
+    line-height: 1.15;
+    flex: 1;
+    min-width: 0;
     color: var(--accent-cyan);
 }
 
@@ -651,6 +655,27 @@ footer {
     section { scroll-margin-top: calc(110px + env(safe-area-inset-top)); }
     main { max-width: 99vw; }
     .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+    .skills-container {
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    .skill-window-top {
+        min-height: 48px;
+        padding: 8px 12px;
+        gap: 8px;
+    }
+    .skill-window-dots { gap: 7px; }
+    .skill-window-dots .dot {
+        width: 11px;
+        height: 11px;
+    }
+    .skill-window-top h5 {
+        font-size: 0.9rem;
+        line-height: 1.2;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
 
     /* Carrusel: centrado perfecto y proporcion estable (tabla/phone) */
     .icon-cards {
@@ -708,6 +733,13 @@ footer {
     .hero { padding-top: calc(188px + env(safe-area-inset-top)); }
     .skills-list { gap: 6px; justify-content: flex-start; }
     .skill-badge { font-size: 0.72rem; padding: 5px 9px; border-width: 1.5px; }
+    .skill-window-top {
+        min-height: 44px;
+        padding: 7px 10px;
+    }
+    .skill-window-top h5 {
+        font-size: 0.84rem;
+    }
 
     /* ==== Carrusel movil centrado y sin recortes ==== */
     .icon-cards {
