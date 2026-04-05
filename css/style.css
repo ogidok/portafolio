@@ -102,8 +102,8 @@ nav {
 
 .hero-content {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     align-items: center;
 }
 
@@ -481,12 +481,70 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .hero { padding: 150px 1.4rem 90px; }
     .hero-content { grid-template-columns: 1fr; text-align: center; }
-    .hero-text { order: 2; }
-    .hero-meta { order: 1; display: flex; flex-direction: column; align-items: center; }
     .glitch { font-size: 2.5rem; }
     .nav-links { display: none; }
     .description { margin: 0 auto; }
+}
+
+/* Desktop scale up */
+@media (min-width: 1024px) {
+    body { font-size: 18px; }
+
+    .nav-container,
+    .hero,
+    .projects-grid,
+    .skills-container,
+    .footer-content {
+        max-width: 1360px;
+    }
+
+    .logo { font-size: 1.35rem; }
+    .nav-links a { font-size: 1rem; }
+
+    .hero {
+        padding: 200px 2.5rem 120px;
+    }
+
+    .glitch { font-size: 5.6rem; }
+    .role { font-size: 2.25rem; }
+
+    .description {
+        max-width: 760px;
+    }
+
+    .description p {
+        font-size: 1.15rem;
+        line-height: 1.75;
+    }
+
+    .btn {
+        font-size: 1.05rem;
+        padding: 1rem 2.4rem;
+    }
+
+    .section-title { font-size: 2.45rem; }
+
+    .project-info h4 { font-size: 1.55rem; }
+    .project-info p {
+        font-size: 1rem;
+        height: auto;
+        min-height: 96px;
+    }
+
+    .tech-stack span { font-size: 0.8rem; }
+    .project-links a,
+    .private-repo { font-size: 0.92rem; }
+
+    .skill-category h5 { font-size: 1.1rem; }
+    .skill-list span { font-size: 1rem; }
+
+    .cert-title { font-size: 0.82rem; }
+    .cert-desc { font-size: 0.64rem; }
+
+    .contact-btn { font-size: 0.95rem; }
+    .system-status { font-size: 0.9rem; }
 }
 
 /* --- RESPONSIVE QUERIES --- */
@@ -547,6 +605,7 @@ footer {
     header { border-radius: 10px 10px 0 0; }
     footer { border-radius: 0 0 10px 10px; }
     .welcome-block, #about { padding: 15px 4vw 8px 4vw; }
+    .hero { padding-top: 132px; }
     .skills-list { gap: 6px; justify-content: flex-start; }
     .skill-badge { font-size: 0.72rem; padding: 5px 9px; border-width: 1.5px; }
 
