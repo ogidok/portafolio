@@ -14,10 +14,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
     <link rel="icon" href="img/favicon_io/favicon.ico">
     <link rel="manifest" href="img/favicon_io/site.webmanifest">
+    <meta property="og:title" content="Ogidok | Software Engineer Portfolio">
+    <meta property="og:description" content="Backend y Full-stack Software Engineer.">
     <meta property="og:image" content="img/preview.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:alt" content="Preview del portafolio de Ogidok">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ogidok | Software Engineer Portfolio">
+    <meta name="twitter:description" content="Backend y Full-stack Software Engineer.">
     <meta name="twitter:image" content="img/preview.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -31,12 +35,16 @@
                 <span class="bracket">&lt;</span> Ogidok <span class="bracket">/&gt;</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#about">Inicio</a></li>
-                <li><a href="#projects">Proyectos</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#carrucel">Certificados</a></li>
-                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#about" data-i18n="nav.home">Inicio</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Proyectos</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#carrucel" data-i18n="nav.certs">Certificados</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
             </ul>
+            <div class="lang-toggle" role="group" aria-label="Language selector">
+                <button class="lang-btn" type="button" data-lang-switch="es">ES</button>
+                <button class="lang-btn" type="button" data-lang-switch="en">EN</button>
+            </div>
             <div class="menu-toggle" id="mobile-menu">
                 <span></span><span></span><span></span>
             </div>
@@ -47,17 +55,17 @@
     <section id="about" class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <p class="terminal-text"># whoami</p>
+                <p class="terminal-text" data-i18n="hero.whoami"># whoami</p>
                 <h1 class="glitch" data-text="Ogidok">Ogidok</h1>
-                <h2 class="role">Software Engineer</h2>
+                <h2 class="role" data-i18n="hero.role">Software Engineer</h2>
                 <div class="description">
-                    <p>Especializado en desarrollo backend y full-stack con enfoque en arquitecturas escalables y optimizacion de procesos.</p>
-                    <p>Experiencia en automatizacion, integracion de APIs y modernizacion de sistemas heredados. Versatilidad tecnica con capacidad para adaptarme a nuevas tecnologias y metodologias agiles.</p>
-                    <p>Orientado a resultados, con historial comprobado en proyectos de produccion y atencion al detalle en calidad de codigo.</p>
+                    <p data-i18n="hero.description.p1">Especializado en desarrollo backend y full-stack con enfoque en arquitecturas escalables y optimizacion de procesos.</p>
+                    <p data-i18n="hero.description.p2">Experiencia en automatizacion, integracion de APIs y modernizacion de sistemas heredados. Versatilidad tecnica con capacidad para adaptarme a nuevas tecnologias y metodologias agiles.</p>
+                    <p data-i18n="hero.description.p3">Orientado a resultados, con historial comprobado en proyectos de produccion y atencion al detalle en calidad de codigo.</p>
                 </div>
                 <div class="hero-cta">
-                    <a href="#projects" class="btn primary">Ver Proyectos</a>
-                    <a href="#contact" class="btn secondary">Contactar</a>
+                    <a href="#projects" class="btn primary" data-i18n="hero.cta.projects">Ver Proyectos</a>
+                    <a href="#contact" class="btn secondary" data-i18n="hero.cta.contact">Contactar</a>
                 </div>
             </div>
         </div>
@@ -65,7 +73,7 @@
 
     <!-- 2. Proyectos -->
     <section id="projects" class="projects">
-        <h3 class="section-title">Proyectos_Destacados</h3>
+        <h3 class="section-title" data-i18n="sections.projects">Proyectos_Destacados</h3>
         <div class="projects-grid">
             <!-- KioskoApp -->
             <div class="project-card">
@@ -80,8 +88,8 @@
                     <img src="proyects/RemoteMedia.png" alt="KioskoApp">
                 </div>
                 <div class="project-info">
-                    <h4>KioskoApp</h4>
-                    <p>Software para totems Android que genera tickets de atención y sincroniza monitores públicos vía Flask y WebSockets.</p>
+                    <h4 data-i18n="projects.kiosko.title">KioskoApp</h4>
+                    <p data-i18n="projects.kiosko.description">Software para totems Android que genera tickets de atención y sincroniza monitores públicos vía Flask y WebSockets.</p>
                     <div class="tech-stack">
                         <img class="tech-icon" src="https://skillicons.dev/icons?i=kotlin" alt="Kotlin" title="Kotlin" loading="lazy">
                         <img class="tech-icon" src="https://skillicons.dev/icons?i=py" alt="Python" title="Python" loading="lazy">
@@ -89,7 +97,7 @@
                         <img class="tech-icon" src="https://skillicons.dev/icons?i=postman" alt="REST API" title="REST API" loading="lazy">
                     </div>
                     <div class="project-links">
-                        <span class="private-repo">Repo privado</span>
+                        <span class="private-repo" data-i18n="projects.privateRepo">Repo privado</span>
                     </div>
                 </div>
             </div>
@@ -107,16 +115,16 @@
                     <img src="proyects/click2cash.png" alt="Click2cash" class="project-img-contain">
                 </div>
                 <div class="project-info">
-                    <h4>Click2cash</h4>
-                    <p>Extensión de Chrome para detección de ubicación por IP y conversión de precios USD/EUR en tiempo real.</p>
+                    <h4 data-i18n="projects.click2cash.title">Click2cash</h4>
+                    <p data-i18n="projects.click2cash.description">Extensión de Chrome para detección de ubicación por IP y conversión de precios USD/EUR en tiempo real.</p>
                     <div class="tech-stack">
                         <img class="tech-icon" src="https://skillicons.dev/icons?i=js" alt="JavaScript" title="JavaScript" loading="lazy">
                         <img class="tech-icon" src="https://skillicons.dev/icons?i=css" alt="CSS3" title="CSS3" loading="lazy">
                         <img class="tech-icon" src="https://skillicons.dev/icons?i=html" alt="HTML5" title="HTML5" loading="lazy">
                     </div>
                     <div class="project-links">
-                        <a href="https://github.com/ogidok/Click2Cash" target="_blank">GitHub</a>
-                        <a href="https://chromewebstore.google.com/detail/jamkblkkihhcdjoffghiapplikndbknk?utm_source=item-share-cb" target="_blank">Store</a>
+                        <a href="https://github.com/ogidok/Click2Cash" target="_blank" data-i18n="projects.links.github">GitHub</a>
+                        <a href="https://chromewebstore.google.com/detail/jamkblkkihhcdjoffghiapplikndbknk?utm_source=item-share-cb" target="_blank" data-i18n="projects.links.store">Store</a>
                     </div>
                 </div>
             </div>
@@ -134,8 +142,8 @@
                     <img src="proyects/pst1r.png" alt="Pasate1rollo">
                 </div>
                 <div class="project-info">
-                    <h4>Pasate1rollo</h4>
-                    <p>Ecommerce modular en Django que automatiza catálogos, cálculos de pedidos personalizados y flujos postventa.</p>
+                    <h4 data-i18n="projects.pasate.title">Pasate1rollo</h4>
+                    <p data-i18n="projects.pasate.description">Ecommerce modular en Django que automatiza catálogos, cálculos de pedidos personalizados y flujos postventa.</p>
                     <div class="tech-stack">
                         <img class="tech-icon" src="https://skillicons.dev/icons?i=django" alt="Django" title="Django" loading="lazy">
                         <img class="tech-icon" src="https://skillicons.dev/icons?i=py" alt="Python" title="Python" loading="lazy">
@@ -144,8 +152,8 @@
                         <img class="tech-icon" src="https://skillicons.dev/icons?i=css" alt="CSS3" title="CSS3" loading="lazy">
                     </div>
                     <div class="project-links">
-                        <span class="private-repo">Repo privado</span>
-                        <span class="pending-deploy">Despliegue pendiente</span>
+                        <span class="private-repo" data-i18n="projects.privateRepo">Repo privado</span>
+                        <span class="pending-deploy" data-i18n="projects.pendingDeploy">Despliegue pendiente</span>
                     </div>
                 </div>
             </div>
@@ -154,7 +162,7 @@
 
     <!-- 3. Skills -->
     <section id="skills" class="skills">
-        <h3 class="section-title">Habilidades_Técnicas</h3>
+        <h3 class="section-title" data-i18n="sections.skills">Habilidades_Técnicas</h3>
         <div class="skills-container">
             <div class="skill-category">
                 <div class="skill-window-top" aria-hidden="true">
@@ -163,10 +171,10 @@
                         <span class="dot dot-green"></span>
                         <span class="dot dot-pink"></span>
                     </div>
-                    <h5>Python Ecosystem</h5>
+                    <h5 data-i18n="skills.categories.python">Python Ecosystem</h5>
                 </div>
                 <div class="skill-list">
-                    <span>Python</span><span>Django</span><span>Flask</span><span>Machine Learning</span><span>Scraping Web</span>
+                    <span data-i18n="skills.items.python">Python</span><span data-i18n="skills.items.django">Django</span><span data-i18n="skills.items.flask">Flask</span><span data-i18n="skills.items.machineLearning">Machine Learning</span><span data-i18n="skills.items.webScraping">Scraping Web</span>
                 </div>
             </div>
             <div class="skill-category">
@@ -176,10 +184,10 @@
                         <span class="dot dot-green"></span>
                         <span class="dot dot-pink"></span>
                     </div>
-                    <h5>Web Core</h5>
+                    <h5 data-i18n="skills.categories.web">Web Core</h5>
                 </div>
                 <div class="skill-list">
-                    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Node.js</span>
+                    <span data-i18n="skills.items.html">HTML</span><span data-i18n="skills.items.css">CSS</span><span data-i18n="skills.items.javascript">JavaScript</span><span data-i18n="skills.items.node">Node.js</span>
                 </div>
             </div>
             <div class="skill-category">
@@ -189,10 +197,10 @@
                         <span class="dot dot-green"></span>
                         <span class="dot dot-pink"></span>
                     </div>
-                    <h5>Mobile & IoT</h5>
+                    <h5 data-i18n="skills.categories.mobile">Mobile & IoT</h5>
                 </div>
                 <div class="skill-list">
-                    <span>Android</span><span>Kotlin</span><span>Jetpack Compose</span><span>IoT</span>
+                    <span data-i18n="skills.items.android">Android</span><span data-i18n="skills.items.kotlin">Kotlin</span><span data-i18n="skills.items.jetpackCompose">Jetpack Compose</span><span data-i18n="skills.items.iot">IoT</span>
                 </div>
             </div>
             <div class="skill-category">
@@ -202,10 +210,10 @@
                         <span class="dot dot-green"></span>
                         <span class="dot dot-pink"></span>
                     </div>
-                    <h5>Data & Systems</h5>
+                    <h5 data-i18n="skills.categories.data">Data & Systems</h5>
                 </div>
                 <div class="skill-list">
-                    <span>SQL</span><span>PLSQL</span><span>MongoDB</span><span>Linux (Arch)</span><span>Bash</span>
+                    <span data-i18n="skills.items.sql">SQL</span><span data-i18n="skills.items.plsql">PLSQL</span><span data-i18n="skills.items.mongodb">MongoDB</span><span data-i18n="skills.items.linux">Linux (Arch)</span><span data-i18n="skills.items.bash">Bash</span>
                 </div>
             </div>
             <div class="skill-category">
@@ -215,10 +223,10 @@
                         <span class="dot dot-green"></span>
                         <span class="dot dot-pink"></span>
                     </div>
-                    <h5>DevOps & Tools</h5>
+                    <h5 data-i18n="skills.categories.devops">DevOps & Tools</h5>
                 </div>
                 <div class="skill-list">
-                    <span>Git</span><span>Windows Server</span><span>RHEL</span><span>Nmap</span><span>API OpenAI</span><span>Vector Embeddings</span>
+                    <span data-i18n="skills.items.git">Git</span><span data-i18n="skills.items.windowsServer">Windows Server</span><span data-i18n="skills.items.rhel">RHEL</span><span data-i18n="skills.items.nmap">Nmap</span><span data-i18n="skills.items.openaiApi">API OpenAI</span><span data-i18n="skills.items.vectorEmbeddings">Vector Embeddings</span>
                 </div>
             </div>
         </div>
@@ -226,50 +234,50 @@
 
     <!-- 4. Certificaciones -->
     <section id="carrucel" class="certs-section">
-        <h3 class="section-title">Certificaciones</h3>
+        <h3 class="section-title" data-i18n="sections.certs">Certificaciones</h3>
         <div style="display: flex; justify-content: center; margin-bottom: 20px;">
             <figure class="icon-cards" style="margin: 0 auto;">
                 <div class="icon-cards__content">
                     <div class="icon-cards__item">
                         <div class="cert-card main" style="display: flex; flex-direction: column; align-items: center;">
                             <img src="certs/pythontotal.jpg" alt="Python Total" class="cert-img" style="display: block; margin: 0 auto;">
-                            <div class="cert-title" style="text-align: center;">Python Total</div>
-                            <div class="cert-desc" style="text-align: center;">Curso Avanzado Python</div>
+                            <div class="cert-title" style="text-align: center;" data-i18n="certs.pythonTotal.title">Python Total</div>
+                            <div class="cert-desc" style="text-align: center;" data-i18n="certs.pythonTotal.description">Curso Avanzado Python</div>
                         </div>
                     </div>
                     <div class="icon-cards__item">
                         <div class="cert-card main" style="display: flex; flex-direction: column; align-items: center;">
                             <img src="certs/oraclecertificacion.jpg" alt="PLSQL ORACLE" class="cert-img" style="display: block; margin: 0 auto;">
-                            <div class="cert-title" style="text-align: center;">PLSQL ORACLE</div>
-                            <div class="cert-desc" style="text-align: center;">DB Programing SQL</div>
+                            <div class="cert-title" style="text-align: center;" data-i18n="certs.oracle.title">PLSQL ORACLE</div>
+                            <div class="cert-desc" style="text-align: center;" data-i18n="certs.oracle.description">DB Programing SQL</div>
                         </div>
                     </div>
                     <div class="icon-cards__item">
                         <div class="cert-card main" style="display: flex; flex-direction: column; align-items: center;">
                             <img src="certs/htmlcertificado.png" alt="HTML5" class="cert-img" style="display: block; margin: 0 auto;">
-                            <div class="cert-title" style="text-align: center;">HTML5</div>
-                            <div class="cert-desc" style="text-align: center;">HTML5 y CSS Avanzado</div>
+                            <div class="cert-title" style="text-align: center;" data-i18n="certs.html.title">HTML5</div>
+                            <div class="cert-desc" style="text-align: center;" data-i18n="certs.html.description">HTML5 y CSS Avanzado</div>
                         </div>
                     </div>
                     <div class="icon-cards__item">
                         <div class="cert-card main" style="display: flex; flex-direction: column; align-items: center;">
                             <img src="certs/fullstack.jpg" alt="Fullstack" class="cert-img" style="display: block; margin: 0 auto;">
-                            <div class="cert-title" style="text-align: center;">Fullstack</div>
-                            <div class="cert-desc" style="text-align: center;">Desarrollo Web Fullstack</div>
+                            <div class="cert-title" style="text-align: center;" data-i18n="certs.fullstack.title">Fullstack</div>
+                            <div class="cert-desc" style="text-align: center;" data-i18n="certs.fullstack.description">Desarrollo Web Fullstack</div>
                         </div>
                     </div>
                     <div class="icon-cards__item">
                         <div class="cert-card main" style="display: flex; flex-direction: column; align-items: center;">
                             <img src="certs/cert_ia.png" alt="Desarrollo con IA" class="cert-img" style="display: block; margin: 0 auto;">
-                            <div class="cert-title" style="text-align: center;">Desarrollo con IA</div>
-                            <div class="cert-desc" style="text-align: center;">Agentes de desarrollo</div>
+                            <div class="cert-title" style="text-align: center;" data-i18n="certs.ai.title">Desarrollo con IA</div>
+                            <div class="cert-desc" style="text-align: center;" data-i18n="certs.ai.description">Agentes de desarrollo</div>
                         </div>
                     </div>
                     <div class="icon-cards__item">
                         <div class="cert-card main" style="display: flex; flex-direction: column; align-items: center;">
                             <img src="certs/intro-linux.jpg" alt="Introduccion a Linux" class="cert-img" style="display: block; margin: 0 auto;">
-                            <div class="cert-title" style="text-align: center;">Introduccion a Linux</div>
-                            <div class="cert-desc" style="text-align: center;">Fundamentos de Linux</div>
+                            <div class="cert-title" style="text-align: center;" data-i18n="certs.linux.title">Introduccion a Linux</div>
+                            <div class="cert-desc" style="text-align: center;" data-i18n="certs.linux.description">Fundamentos de Linux</div>
                         </div>
                     </div>
                 </div>
@@ -281,8 +289,8 @@
     <footer id="contact">
         <div class="footer-content">
             <div class="contact-info">
-                <h3>Contact_Ogidok</h3>
-                <p>¿Interesado en colaborar? Mis bandejas están abiertas.</p>
+                <h3 data-i18n="footer.contactTitle">Contact_Ogidok</h3>
+                <p data-i18n="footer.contactDescription">¿Interesado en colaborar? Mis bandejas están abiertas.</p>
                 <div class="contact-links">
                     <a href="mailto:ogidokdev@gmail.com" class="contact-btn">
                         <i class="devicon-google-plain"></i> ogidokdev@gmail.com
@@ -293,9 +301,9 @@
                 </div>
             </div>
             <div class="system-status">
-                <p>Status: <span class="online">ONLINE</span></p>
-                <p>Location: The world</p>
-                <p>&copy; 2024 Ogidok. Built with Vanilla JS & CSS Grid.</p>
+                <p><span data-i18n="footer.statusLabel">Status:</span> <span class="online" data-i18n="footer.statusOnline">ONLINE</span></p>
+                <p><span data-i18n="footer.locationLabel">Location:</span> <span data-i18n="footer.locationValue">The world</span></p>
+                <p data-i18n="footer.copyright">&copy; 2024 Ogidok. Built with Vanilla JS & CSS Grid.</p>
             </div>
         </div>
     </footer>

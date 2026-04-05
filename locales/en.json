@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "Ogidok | Software Engineer Portfolio",
+    "description": "Backend and full-stack Software Engineer.",
+    "ogTitle": "Ogidok | Software Engineer Portfolio",
+    "ogDescription": "Backend and full-stack Software Engineer.",
+    "twitterTitle": "Ogidok | Software Engineer Portfolio",
+    "twitterDescription": "Backend and full-stack Software Engineer."
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "skills": "Skills",
+    "certs": "Certifications",
+    "contact": "Contact"
+  },
+  "hero": {
+    "whoami": "# whoami",
+    "role": "Software Engineer",
+    "description": {
+      "p1": "Specialized in backend and full-stack development focused on scalable architectures and process optimization.",
+      "p2": "Experience in automation, API integration, and legacy system modernization. Technical versatility to adapt to new technologies and agile methodologies.",
+      "p3": "Results-driven, with proven production project track record and strong code quality attention to detail."
+    },
+    "cta": {
+      "projects": "View Projects",
+      "contact": "Contact"
+    }
+  },
+  "sections": {
+    "projects": "Featured_Projects",
+    "skills": "Technical_Skills",
+    "certs": "Certifications"
+  },
+  "projects": {
+    "privateRepo": "Private repo",
+    "pendingDeploy": "Pending deployment",
+    "links": {
+      "github": "GitHub",
+      "store": "Store"
+    },
+    "kiosko": {
+      "title": "KioskoApp",
+      "description": "Android kiosk software that generates service tickets and syncs public monitors through Flask and WebSockets."
+    },
+    "click2cash": {
+      "title": "Click2cash",
+      "description": "Chrome extension for IP-based location detection and real-time USD/EUR price conversion."
+    },
+    "pasate": {
+      "title": "Pasate1rollo",
+      "description": "Modular Django ecommerce that automates catalogs, custom order calculations, and post-sales workflows."
+    }
+  },
+  "skills": {
+    "categories": {
+      "python": "Python Ecosystem",
+      "web": "Web Core",
+      "mobile": "Mobile & IoT",
+      "data": "Data & Systems",
+      "devops": "DevOps & Tools"
+    },
+    "items": {
+      "python": "Python",
+      "django": "Django",
+      "flask": "Flask",
+      "machineLearning": "Machine Learning",
+      "webScraping": "Web Scraping",
+      "html": "HTML",
+      "css": "CSS",
+      "javascript": "JavaScript",
+      "node": "Node.js",
+      "android": "Android",
+      "kotlin": "Kotlin",
+      "jetpackCompose": "Jetpack Compose",
+      "iot": "IoT",
+      "sql": "SQL",
+      "plsql": "PLSQL",
+      "mongodb": "MongoDB",
+      "linux": "Linux (Arch)",
+      "bash": "Bash",
+      "git": "Git",
+      "windowsServer": "Windows Server",
+      "rhel": "RHEL",
+      "nmap": "Nmap",
+      "openaiApi": "OpenAI API",
+      "vectorEmbeddings": "Vector Embeddings"
+    }
+  },
+  "certs": {
+    "pythonTotal": {
+      "title": "Python Total",
+      "description": "Advanced Python Course"
+    },
+    "oracle": {
+      "title": "PLSQL ORACLE",
+      "description": "DB Programming SQL"
+    },
+    "html": {
+      "title": "HTML5",
+      "description": "Advanced HTML5 and CSS"
+    },
+    "fullstack": {
+      "title": "Fullstack",
+      "description": "Fullstack Web Development"
+    },
+    "ai": {
+      "title": "AI Development",
+      "description": "Development agents"
+    },
+    "linux": {
+      "title": "Linux Introduction",
+      "description": "Linux fundamentals"
+    }
+  },
+  "footer": {
+    "contactTitle": "Contact_Ogidok",
+    "contactDescription": "Interested in collaborating? My inbox is open.",
+    "statusLabel": "Status:",
+    "statusOnline": "ONLINE",
+    "locationLabel": "Location:",
+    "locationValue": "The world",
+    "copyright": "© 2024 Ogidok. Built with Vanilla JS & CSS Grid."
+  }
+}

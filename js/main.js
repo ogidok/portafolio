@@ -1,13 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // 1. Mobile Menu Logic
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelector('.nav-links');
 
-    mobileMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        mobileMenu.classList.toggle('open');
-    });
+    if (mobileMenu && navLinks) {
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+        });
+    }
 
     // Add style for active mobile menu via JS
     const style = document.createElement('style');
@@ -34,7 +36,116 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.append(style);
 
-        // Carrusel 3D con arrastre
+    // 2. Internationalization (i18n)
+    const I18N_STORAGE_KEY = 'portfolio_lang';
+    const I18N_FALLBACK_LANG = 'es';
+    const I18N_SUPPORTED_LANGS = ['es', 'en'];
+    const langButtons = document.querySelectorAll('[data-lang-switch]');
+    let i18nData = {};
+
+    const normalizeLanguage = (langValue) => {
+        const normalized = (langValue || '').toLowerCase();
+        if (normalized.startsWith('es')) {
+            return 'es';
+        }
+        return 'en';
+    };
+
+    const getInitialLanguage = () => {
+        const savedLang = localStorage.getItem(I18N_STORAGE_KEY);
+        const fromStorage = normalizeLanguage(savedLang);
+        if (savedLang && I18N_SUPPORTED_LANGS.includes(fromStorage)) {
+            return fromStorage;
+        }
+
+        const browserLang = normalizeLanguage(navigator.language);
+        if (I18N_SUPPORTED_LANGS.includes(browserLang)) {
+            return browserLang;
+        }
+        return I18N_FALLBACK_LANG;
+    };
+
+    const getByPath = (source, keyPath) => {
+        return keyPath.split('.').reduce((acc, key) => {
+            if (acc && Object.prototype.hasOwnProperty.call(acc, key)) {
+                return acc[key];
+            }
+            return undefined;
+        }, source);
+    };
+
+    const setMetaContent = (selector, value) => {
+        if (!value) {
+            return;
+        }
+        const meta = document.querySelector(selector);
+        if (meta) {
+            meta.setAttribute('content', value);
+        }
+    };
+
+    const applyTranslations = (lang) => {
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll('[data-i18n]').forEach((element) => {
+            const key = element.getAttribute('data-i18n');
+            const translated = getByPath(i18nData, key);
+            if (typeof translated === 'string') {
+                element.textContent = translated;
+            }
+        });
+
+        const pageTitle = getByPath(i18nData, 'meta.title');
+        if (pageTitle) {
+            document.title = pageTitle;
+        }
+
+        setMetaContent('meta[property="og:title"]', getByPath(i18nData, 'meta.ogTitle'));
+        setMetaContent('meta[property="og:description"]', getByPath(i18nData, 'meta.ogDescription'));
+        setMetaContent('meta[name="twitter:title"]', getByPath(i18nData, 'meta.twitterTitle'));
+        setMetaContent('meta[name="twitter:description"]', getByPath(i18nData, 'meta.twitterDescription'));
+
+        langButtons.forEach((button) => {
+            const btnLang = button.getAttribute('data-lang-switch');
+            button.classList.toggle('is-active', btnLang === lang);
+        });
+    };
+
+    const loadTranslations = async (lang) => {
+        const response = await fetch(`locales/${lang}.json`);
+        if (!response.ok) {
+            throw new Error(`Failed to load locale: ${lang}`);
+        }
+        return response.json();
+    };
+
+    const changeLanguage = async (nextLang) => {
+        const safeLang = I18N_SUPPORTED_LANGS.includes(nextLang)
+            ? nextLang
+            : I18N_FALLBACK_LANG;
+        let appliedLang = safeLang;
+
+        try {
+            i18nData = await loadTranslations(safeLang);
+        } catch (_) {
+            i18nData = await loadTranslations(I18N_FALLBACK_LANG);
+            appliedLang = I18N_FALLBACK_LANG;
+        }
+
+        localStorage.setItem(I18N_STORAGE_KEY, appliedLang);
+        applyTranslations(appliedLang);
+    };
+
+    langButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const selectedLang = button.getAttribute('data-lang-switch');
+            changeLanguage(selectedLang);
+        });
+    });
+
+    changeLanguage(getInitialLanguage());
+
+    // 3. Carrusel 3D con arrastre
         const carousel = document.querySelector('.icon-cards');
         if (carousel) {
             const content = carousel.querySelector('.icon-cards__content');
@@ -168,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
             startAutoRotate();
         }
 
-    // 3. Smooth Scroll Reveal
+    // 4. Smooth Scroll Reveal
     const revealOnScroll = () => {
         const sections = document.querySelectorAll('section');
         const triggerBottom = window.innerHeight * 0.8;
@@ -192,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Trigger once on load
 
-    // 4. Hero Glitch Effect Enhancement
+    // 5. Hero Glitch Effect Enhancement
     const glitchElement = document.querySelector('.glitch');
     if (glitchElement) {
         setInterval(() => {
