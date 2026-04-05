@@ -264,6 +264,11 @@ nav {
     opacity: 0.8;
 }
 
+.project-image img.project-img-contain {
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.35);
+}
+
 .project-info {
     padding: 1.5rem;
 }
