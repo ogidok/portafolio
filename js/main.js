@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Internationalization (i18n)
     const I18N_STORAGE_KEY = 'portfolio_lang';
     const I18N_FALLBACK_LANG = 'es';
-    const I18N_SUPPORTED_LANGS = ['es', 'en'];
+    const I18N_SUPPORTED_LANGS = ['es', 'en', 'jpn'];
     const langButtons = document.querySelectorAll('[data-lang-switch]');
     let i18nData = {};
 
@@ -47,6 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const normalized = (langValue || '').toLowerCase();
         if (normalized.startsWith('es')) {
             return 'es';
+        }
+        if (normalized.startsWith('ja') || normalized.startsWith('jp') || normalized.startsWith('jpn')) {
+            return 'jpn';
         }
         return 'en';
     };
@@ -85,7 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const applyTranslations = (lang) => {
-        document.documentElement.lang = lang;
+        const langAttr = lang === 'jpn' ? 'ja' : lang;
+        document.documentElement.lang = langAttr;
 
         document.querySelectorAll('[data-i18n]').forEach((element) => {
             const key = element.getAttribute('data-i18n');

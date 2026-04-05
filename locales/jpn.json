@@ -1,0 +1,125 @@
+{
+  "meta": {
+    "title": "Ogidok | ソフトウェアエンジニア ポートフォリオ",
+    "description": "バックエンドとフルスタックに特化したソフトウェアエンジニア。",
+    "ogTitle": "Ogidok | ソフトウェアエンジニア ポートフォリオ",
+    "ogDescription": "バックエンドとフルスタックに特化したソフトウェアエンジニア。",
+    "twitterTitle": "Ogidok | ソフトウェアエンジニア ポートフォリオ",
+    "twitterDescription": "バックエンドとフルスタックに特化したソフトウェアエンジニア。"
+  },
+  "nav": {
+    "home": "ホーム",
+    "projects": "プロジェクト",
+    "skills": "スキル",
+    "certs": "資格",
+    "contact": "連絡先"
+  },
+  "hero": {
+    "whoami": "# whoami",
+    "role": "ソフトウェアエンジニア",
+    "description": {
+      "p1": "スケーラブルな設計とプロセス最適化を重視したバックエンド・フルスタック開発を専門としています。",
+      "p2": "自動化、API統合、レガシーシステム刷新の経験があり、新しい技術やアジャイル手法への適応力があります。",
+      "p3": "成果志向で、本番プロジェクトの実績とコード品質への高いこだわりがあります。"
+    },
+    "cta": {
+      "projects": "プロジェクトを見る",
+      "contact": "連絡する"
+    }
+  },
+  "sections": {
+    "projects": "注目_プロジェクト",
+    "skills": "技術_スキル",
+    "certs": "資格"
+  },
+  "projects": {
+    "privateRepo": "非公開リポジトリ",
+    "pendingDeploy": "デプロイ待ち",
+    "links": {
+      "github": "GitHub",
+      "store": "ストア"
+    },
+    "kiosko": {
+      "title": "KioskoApp",
+      "description": "Androidトーテム向けの受付チケット発行システム。Flask と WebSockets で公開モニターと同期します。"
+    },
+    "click2cash": {
+      "title": "Click2cash",
+      "description": "IPベースの位置判定と USD/EUR のリアルタイム価格変換を行う Chrome 拡張。"
+    },
+    "pasate": {
+      "title": "Pasate1rollo",
+      "description": "Django製のモジュラー型EC。商品管理、注文計算、アフターセールス業務を自動化。"
+    }
+  },
+  "skills": {
+    "categories": {
+      "python": "Python エコシステム",
+      "web": "Web コア",
+      "mobile": "モバイル & IoT",
+      "data": "データ & システム",
+      "devops": "DevOps & ツール"
+    },
+    "items": {
+      "python": "Python",
+      "django": "Django",
+      "flask": "Flask",
+      "machineLearning": "機械学習",
+      "webScraping": "Webスクレイピング",
+      "html": "HTML",
+      "css": "CSS",
+      "javascript": "JavaScript",
+      "node": "Node.js",
+      "android": "Android",
+      "kotlin": "Kotlin",
+      "jetpackCompose": "Jetpack Compose",
+      "iot": "IoT",
+      "sql": "SQL",
+      "plsql": "PLSQL",
+      "mongodb": "MongoDB",
+      "linux": "Linux (Arch)",
+      "bash": "Bash",
+      "git": "Git",
+      "windowsServer": "Windows Server",
+      "rhel": "RHEL",
+      "nmap": "Nmap",
+      "openaiApi": "OpenAI API",
+      "vectorEmbeddings": "ベクトル埋め込み"
+    }
+  },
+  "certs": {
+    "pythonTotal": {
+      "title": "Python Total",
+      "description": "上級 Python コース"
+    },
+    "oracle": {
+      "title": "PLSQL ORACLE",
+      "description": "DB Programming SQL"
+    },
+    "html": {
+      "title": "HTML5",
+      "description": "上級 HTML5 と CSS"
+    },
+    "fullstack": {
+      "title": "Fullstack",
+      "description": "フルスタックWeb開発"
+    },
+    "ai": {
+      "title": "AI開発",
+      "description": "開発エージェント"
+    },
+    "linux": {
+      "title": "Linux 入門",
+      "description": "Linux の基礎"
+    }
+  },
+  "footer": {
+    "contactTitle": "Contact_Ogidok",
+    "contactDescription": "コラボレーションに興味がありますか？お気軽にご連絡ください。",
+    "statusLabel": "ステータス:",
+    "statusOnline": "ONLINE",
+    "locationLabel": "場所:",
+    "locationValue": "世界中",
+    "copyright": "© 2024 Ogidok. Built with Vanilla JS & CSS Grid."
+  }
+}

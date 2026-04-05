@@ -92,6 +92,10 @@ nav {
     color: var(--accent-cyan);
 }
 
+.menu-toggle {
+    display: none;
+}
+
 .lang-toggle {
     display: flex;
     align-items: center;
@@ -596,6 +600,9 @@ footer {
 @media (max-width: 768px) {
     .nav-container {
         padding: calc(0.95rem + env(safe-area-inset-top)) 1.1rem 0.9rem;
+    }
+    .menu-toggle {
+        display: block;
     }
     .lang-toggle { margin-left: auto; margin-right: 0.8rem; }
     .lang-btn {
