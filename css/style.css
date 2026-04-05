@@ -380,10 +380,47 @@ nav {
     padding-bottom: 5px;
 }
 
+.skill-category {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.skill-window-top {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(0, 0, 0, 0.32);
+}
+
+.skill-window-dots {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-window-dots .dot {
+    width: 14px;
+    height: 14px;
+}
+
+.skill-window-top h5 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 0.95rem;
+    color: var(--accent-cyan);
+}
+
 .skill-list {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    padding: 1rem 1rem 1.1rem;
 }
 
 .skill-list span {
