@@ -397,7 +397,8 @@ nav {
     max-width: 1000px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 260px));
+    justify-content: center;
     gap: 2rem;
     padding: 0 2rem;
 }
@@ -694,7 +695,8 @@ footer {
     main { max-width: 99vw; }
     .projects-grid { grid-template-columns: 1fr; gap: 20px; }
     .skills-container {
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
+        justify-content: center;
         gap: 1rem;
         padding: 0 1rem;
     }
