@@ -136,6 +136,7 @@
     "statusOnline": "ONLINE",
     "locationLabel": "場所:",
     "locationValue": "世界中",
+    "poweredBy": "Powered by Ogidok",
     "copyright": "© 2024 Ogidok. Built with Vanilla JS & CSS Grid."
   }
 }

@@ -136,6 +136,7 @@
     "statusOnline": "ONLINE",
     "locationLabel": "Location:",
     "locationValue": "The world",
+    "poweredBy": "Powered by Ogidok",
     "copyright": "© 2024 Ogidok. Built with Vanilla JS & CSS Grid."
   }
 }
